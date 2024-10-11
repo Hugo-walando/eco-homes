@@ -15,10 +15,10 @@ const navLinks = [
 export default function NavBar() {
   const pathname = usePathname();
   return (
-    <div className='flex justify-between py-8 px-16 items-center absolute w-full'>
+    <div className='flex justify-between py-8 px-16 items-center absolute w-full z-10'>
       <Link
         href='/home'
-        className={`${helveticaMedium.className} font-bold text-4xl text-col_primary_1`}
+        className={`${helveticaMedium.className} font-bold text-4xl  text-col_white_2 `}
       >
         Eco Homes
       </Link>
@@ -31,7 +31,7 @@ export default function NavBar() {
                 <Link
                   className={`${helveticaRegular.className} ${
                     isActive ? 'text-col_primary_1' : 'text-col_gray_1'
-                  } text-lg`}
+                  } text-base`}
                   href={link.href}
                 >
                   {link.name}
@@ -42,7 +42,7 @@ export default function NavBar() {
         </ul>
       </nav>
       <Link
-        className='text-lg text-col_white_2 py-2 px-4 bg-transparent border border-col_white_2 rounded-full'
+        className='text-base text-col_white_2 py-4 px-8 bg-transparent border border-2 border-col_white_2 rounded-full'
         href='/contact'
       >
         Free Consultation!
