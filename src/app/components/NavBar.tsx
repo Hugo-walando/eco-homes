@@ -42,7 +42,7 @@ export default function NavBar() {
         </ul>
       </nav>
       <Link
-        className='text-base text-col_white_2 py-4 px-8 bg-transparent border border-2 border-col_white_2 rounded-full'
+        className='text-base text-col_white_2 py-4 px-8 bg-transparent border-2 border-col_white_2 rounded-full'
         href='/contact'
       >
         Free Consultation!
