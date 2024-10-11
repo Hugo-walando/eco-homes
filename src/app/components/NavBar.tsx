@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
+import { helveticaMedium } from '../public/fonts/font';
 const navLinks = [
   { name: 'Home', href: '/home' },
   { name: 'About', href: '/about' },
@@ -23,7 +23,9 @@ export default function NavBar() {
             return (
               <li key={link.href}>
                 <Link
-                  className={isActive ? 'text-red-500' : 'text-black'}
+                  className={`${helveticaMedium.className} ${
+                    isActive ? 'text-red-500' : 'text-black'
+                  }`}
                   href={link.href}
                 >
                   {link.name}
