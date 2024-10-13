@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import Cabin from '../public/images/3d-rendering-wooden-house_2.jpg';
+import Cabin from '../public/images/minimalistic-cabin-blending-into-environment.jpg';
+import LeftImage from '../public/images/unique-simple-small-wooden-house-design-1.jpg';
 import { ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { helveticaRegular } from '../public/fonts/font';
@@ -53,7 +54,40 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div>Home</div>
+      <section className='h-screen w-full flex bg-col_white_backgrounds flex-col items-center '>
+        <h2
+          className={`text-center text-4xl font-semibold text-col_gray_dark pt-20 max-w-screen-md ${helveticaRegular.className}`}
+        >
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis
+          commodi at, eum eligendi,
+          <span className='text-green-500'> magni</span> laboriosam consequuntur
+          iure
+        </h2>
+        <div className='flex w-full h-full pb-6 px-20 justify-between items-end'>
+          <div>
+            <Image
+              className='rounded-xl w-[200px]'
+              src={LeftImage}
+              alt='modern house in nature'
+            />
+          </div>
+          <div>
+            <Image
+              className='rounded-xl w-[400px]'
+              src={LeftImage}
+              alt='modern house in nature'
+            />
+          </div>
+          <div>
+            <Image
+              className='rounded-xl w-[200px]'
+              src={LeftImage}
+              alt='modern house in nature'
+            />
+          </div>
+        </div>
+      </section>
+      <section className='h-screen w-full flex bg-col_white flex-col items-center '></section>
     </>
   );
 }

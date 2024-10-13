@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`bg-col_white_1`}>
+      <body>
         <NavBar />
         {children}
         <Footer />
