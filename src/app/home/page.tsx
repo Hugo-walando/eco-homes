@@ -27,7 +27,7 @@ export default function Home() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: imagesContainerRef.current, // Le déclencheur est le container d'images
-          start: 'top center',
+          start: 'top 70%',
           toggleActions: 'play pause resume reverse',
         },
       });
@@ -104,7 +104,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <section className='h-screen w-full flex bg-col_white_backgrounds flex-col items-center '>
+      <section className='h-screen w-full flex bg-col_white_background flex-col items-center '>
         <h2
           className={`${helveticaRegular.className} text-center text-col_gray_dark text-4xl pt-20 max-w-screen-md `}
         >
@@ -158,7 +158,7 @@ export default function Home() {
         </div>
         <div
           ref={imagesContainerRef}
-          className='w-full h-full pb-16 px-20 flex gap-4 '
+          className='w-full h-full pb-20 px-20 flex gap-4 '
         >
           <div className='w-full h-full rounded-2xl bg-black animated-image'>
             <Image
@@ -188,6 +188,20 @@ export default function Home() {
               alt='modern house in nature'
             />
           </div>
+        </div>
+      </section>
+      <section className='h-screen bg-col_white_background'>
+        <div className='w-full flex flex-col items-center justify-center pt-20'>
+          <span
+            className={`${helveticaRegular.className} text-col_gray_dark uppercase`}
+          >
+            Explore our services
+          </span>
+          <h2
+            className={`${helveticaRegular.className} text-col_gray_dark text-5xl pt-5 `}
+          >
+            From blueprint to key in hand
+          </h2>
         </div>
       </section>
     </>
