@@ -1,12 +1,62 @@
-import React from 'react';
+'use client';
+
+import React, { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Cabin from '../public/images/minimalistic-cabin-blending-into-environment.jpg';
 import LeftImage from '../public/images/unique-simple-small-wooden-house-design-1.jpg';
+import Lenis from 'lenis';
 import { ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { helveticaRegular } from '../public/fonts/font';
+import gsap from 'gsap';
+import { ScrollTrigger } from '@/lib/gsap';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+  const imagesContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Sélectionner toutes les images dans le container
+    if (imagesContainerRef.current) {
+      const images = gsap.utils.toArray<HTMLImageElement>(
+        imagesContainerRef.current.querySelectorAll('.animated-image'),
+      );
+
+      // Créer une timeline
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: imagesContainerRef.current, // Le déclencheur est le container d'images
+          start: 'top center',
+          toggleActions: 'play pause resume reverse',
+        },
+      });
+      // Appliquer l'animation à chaque image
+      images.forEach((image, index) => {
+        tl.fromTo(
+          image,
+          { opacity: 0, x: -100 }, // Départ
+          {
+            opacity: 1,
+            x: 0, // Fin
+            duration: 1,
+            ease: 'power2.out',
+          },
+          index * 0.2,
+        );
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    const lenis = new Lenis();
+    const raf = (time: number) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+    requestAnimationFrame(raf);
+  }, []);
+
   return (
     <>
       <div className=' w-full h-screen overflow-hidden'>
@@ -56,38 +106,90 @@ export default function Home() {
       </div>
       <section className='h-screen w-full flex bg-col_white_backgrounds flex-col items-center '>
         <h2
-          className={`text-center text-4xl font-semibold text-col_gray_dark pt-20 max-w-screen-md ${helveticaRegular.className}`}
+          className={`${helveticaRegular.className} text-center text-col_gray_dark text-4xl pt-20 max-w-screen-md `}
         >
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis
           commodi at, eum eligendi,
           <span className='text-green-500'> magni</span> laboriosam consequuntur
           iure
         </h2>
-        <div className='flex w-full h-full pb-6 px-20 justify-between items-end'>
-          <div>
+        <div className='flex w-full h-full pb-6 px-20 justify-center gap-7 items-center'>
+          <Image
+            className='rounded-xl w-[200px]'
+            src={LeftImage}
+            alt='modern house in nature'
+          />
+
+          <Image
+            className='animated_image rounded-xl w-[300px] z-1'
+            src={LeftImage}
+            alt='modern house in nature'
+          />
+
+          <Image
+            className='animated_image rounded-xl w-[200px] z-1'
+            src={LeftImage}
+            alt='modern house in nature'
+          />
+        </div>
+      </section>
+      <section className='h-screen w-full flex bg-col_white flex-col items-center z-0'>
+        <div className='w-full px-20 flex justify-between pt-20 pb-16'>
+          <div className=''>
+            <span
+              className={`${helveticaRegular.className} text-col_gray_dark uppercase`}
+            >
+              Safety and secure
+            </span>
+            <h2
+              className={`${helveticaRegular.className} text-col_gray_dark text-5xl pt-5 max-w-[80%]`}
+            >
+              Well-engineered houses with these features
+            </h2>
+          </div>
+          <div className='flex items-center justify-end'>
+            <span
+              className={`${helveticaRegular.className} text-col_gray_dark max-w-[60%] text-right`}
+            >
+              Our well-engineered houses are designed with precision, offerring
+              a perfect blend of durabilty, efficiency, and comfort.
+            </span>
+          </div>
+        </div>
+        <div
+          ref={imagesContainerRef}
+          className='w-full h-full pb-16 px-20 flex gap-4 '
+        >
+          <div className='w-full h-full rounded-2xl bg-black animated-image'>
             <Image
-              className='rounded-xl w-[200px]'
-              src={LeftImage}
+              className='w-full h-full object-cover rounded-2xl'
+              src={Cabin}
               alt='modern house in nature'
             />
           </div>
-          <div>
+          <div className='w-full h-full rounded-2xl bg-black animated-image'>
             <Image
-              className='rounded-xl w-[400px]'
-              src={LeftImage}
+              className='w-full h-full object-cover rounded-2xl'
+              src={Cabin}
               alt='modern house in nature'
             />
           </div>
-          <div>
+          <div className='w-full h-full rounded-2xl bg-black animated-image'>
             <Image
-              className='rounded-xl w-[200px]'
-              src={LeftImage}
+              className='w-full h-full object-cover rounded-2xl'
+              src={Cabin}
+              alt='modern house in nature'
+            />
+          </div>
+          <div className='w-full h-full rounded-2xl bg-black animated-image'>
+            <Image
+              className='w-full h-full object-cover rounded-2xl'
+              src={Cabin}
               alt='modern house in nature'
             />
           </div>
         </div>
       </section>
-      <section className='h-screen w-full flex bg-col_white flex-col items-center '></section>
     </>
   );
 }
