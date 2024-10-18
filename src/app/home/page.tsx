@@ -70,15 +70,27 @@ export default function Home() {
       const texts = gsap.utils.toArray<HTMLDivElement>(
         fadeInTextContainerRef.current.querySelectorAll('.animated-text'),
       );
+
+      const images = gsap.utils.toArray<HTMLImageElement>(
+        pinnedImageContainerRef.current.querySelectorAll('.slide-image-wf'),
+      );
+
+      gsap.set(images, { yPercent: 101 });
+
+      const allImages = gsap.utils.toArray<HTMLImageElement>(
+        pinnedImageContainerRef.current.querySelectorAll('.slide-image'),
+      );
+
       console.log(fadeInTextContainerRef.current!.scrollHeight);
 
+      // Anim text fade-in
       texts.forEach((text) => {
         gsap.fromTo(
           text,
           { opacity: 0 }, // Départ
           {
             opacity: 1, // Fin
-            duration: 2,
+            duration: 3,
             ease: 'power2.out',
             scrollTrigger: {
               trigger: text, // Le déclencheur est le container d'images
@@ -91,14 +103,23 @@ export default function Home() {
         );
       });
 
+      // Anim Images slides ONLY FOR DESKTOP
       mm.add('(min-width: 600px)', () => {
         console.log('desktop');
 
-        ScrollTrigger.create({
-          trigger: mainContainerRef.current,
-          start: 'top top',
-          end: `bottom bottom`,
-          pin: pinnedImageContainerRef.current,
+        texts.forEach((text, index) => {
+          const headline = text.querySelector('h3');
+          const animation = gsap
+            .timeline()
+            .to(images[index], { yPercent: 0 })
+            .set(allImages[index], { autoAlpha: 0 });
+          ScrollTrigger.create({
+            trigger: headline,
+            start: 'top 80%',
+            end: 'top 50%',
+            animation: animation,
+            scrub: true,
+          });
         });
       });
     }
@@ -289,9 +310,9 @@ export default function Home() {
         <div ref={mainContainerRef} className='flex'>
           <div
             ref={fadeInTextContainerRef}
-            className='w-1/2  flex flex-col items-end pt-[110px]'
+            className='w-1/2  flex flex-col items-end'
           >
-            <div className='h-[70vh] flex flex-col items-center justify-center max-w-[70%] text-left px-20 animated-text'>
+            <div className='h-screen flex flex-col items-center justify-center max-w-[70%] text-left px-20 '>
               <h3
                 className={`${helveticaRegular.className} text-col_gray_dark text-4xl `}
               >
@@ -310,7 +331,7 @@ export default function Home() {
                 Libero, aliquam?
               </span>
             </div>
-            <div className='h-[70vh] flex flex-col items-center justify-center max-w-[70%] text-left px-20 animated-text'>
+            <div className='h-screen flex flex-col items-center justify-center max-w-[70%] text-left px-20 animated-text'>
               <h3
                 className={`${helveticaRegular.className} text-col_gray_dark text-4xl `}
               >
@@ -329,7 +350,7 @@ export default function Home() {
                 Libero, aliquam?
               </span>
             </div>
-            <div className='h-[70vh] flex flex-col items-center justify-center max-w-[70%] text-left px-20 animated-text'>
+            <div className='h-screen flex flex-col items-center justify-center max-w-[70%] text-left px-20 animated-text'>
               <h3
                 className={`${helveticaRegular.className} text-col_gray_dark text-4xl`}
               >
@@ -348,7 +369,7 @@ export default function Home() {
                 Libero, aliquam?
               </span>
             </div>
-            <div className='h-[70vh]  flex flex-col items-center justify-center max-w-[70%] text-left px-20 animated-text'>
+            <div className='h-screen  flex flex-col items-center justify-center max-w-[70%] text-left px-20 animated-text'>
               <h3
                 className={`${helveticaRegular.className} text-col_gray_dark text-4xl`}
               >
@@ -369,39 +390,32 @@ export default function Home() {
             </div>
           </div>
 
-          <div
-            ref={pinnedImageContainerRef}
-            className='w-1/2 h-screen flex flex-col justify-center bg-red-400'
-          >
-            <div className='rounded-2xl h-[40vh] w-[30vw]'>
-              {/* <Image
+          <div className='w-1/2 h-screen flex flex-col justify-center sticky top-0 '>
+            <div
+              ref={pinnedImageContainerRef}
+              className=' rounded-2xl h-[40vh] w-[30vw] relative overflow-hidden'
+            >
+              <Image
                 src={LeftImage}
                 alt='Modern house'
-                className='rounded-3xl w-full h-full  object-cover '
-              /> */}
-              <div className=' h-full w-full bg-black'></div>
+                className='slide-image rounded-3xl w-full h-full object-cover absolute '
+              />
+              <Image
+                src={Cabin}
+                alt='Modern house'
+                className='slide-image slide-image-wf rounded-3xl w-full h-full object-cover absolute '
+              />
+              <Image
+                src={LeftImage}
+                alt='Modern house'
+                className='slide-image slide-image-wf  rounded-3xl w-full h-full object-cover absolute '
+              />
+              <Image
+                src={LeftImage}
+                alt='Modern house'
+                className='slide-image slide-image-wf  rounded-3xl w-full h-full object-cover absolute'
+              />
             </div>
-            {/* <div className='rounded-2xl h-[40vh]'>
-                <Image
-                  src={LeftImage}
-                  alt='Modern house'
-                  className='rounded-3xl w-full h-full object-cover '
-                />
-              </div>
-              <div className='rounded-2xl h-[40vh]'>
-                <Image
-                  src={LeftImage}
-                  alt='Modern house'
-                  className='rounded-3xl w-full h-full object-cover '
-                />
-              </div>
-              <div className='rounded-2xl h-[40vh]'>
-                <Image
-                  src={LeftImage}
-                  alt='Modern house'
-                  className='rounded-3xl w-full h-full object-cover '
-                />
-              </div> */}
           </div>
         </div>
       </section>
