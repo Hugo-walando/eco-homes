@@ -111,7 +111,7 @@ export default function Home() {
           const headline = text.querySelector('h3');
           const animation = gsap
             .timeline()
-            .to(images[index], { yPercent: 0 })
+            .to(images[index], { yPercent: 0, ease: 'power2.out', duration: 2 })
             .set(allImages[index], { autoAlpha: 0 });
           ScrollTrigger.create({
             trigger: headline,
@@ -139,7 +139,7 @@ export default function Home() {
       <div className=' w-full h-screen overflow-hidden'>
         <Image src={Cabin} alt='Cabin' />
         <div className='z-0 absolute inset-0 bg-black bg-opacity-20'></div>
-        <div className='z-1 absolute bottom-20 left-16 max-w-screen-md'>
+        <div className='z-10 absolute bottom-20 left-16 max-w-screen-md'>
           <h1
             className={`${helveticaRegular.className} text-5xl font-semi-bold text-col_white mb-12`}
           >
@@ -241,20 +241,20 @@ export default function Home() {
           className='w-full h-full pb-20 px-20 flex gap-4 '
         >
           <div className='w-full h-full rounded-2xl bg-black animated-image'>
-            <div className='z-0 absolute inset-0 bg-black bg-opacity-20'></div>
+            <div className='z-0 absolute inset-0 bg-black bg-opacity-20 rounded-2xl'></div>
             <h2
               className={`${helveticaRegular.className} tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
             >
               Eco friendly
             </h2>
             <Image
-              className='w-full h-full object-cover rounded-2xl'
+              className='w-full h-full object-cover rounded-2xl '
               src={riverHouse}
               alt='modern house in nature'
             />
           </div>
           <div className='w-full h-full rounded-2xl bg-black animated-image'>
-            <div className='z-0 absolute inset-0 bg-black bg-opacity-20'></div>
+            <div className='z-0 absolute inset-0 bg-black bg-opacity-20 rounded-2xl'></div>
             <h2
               className={`${helveticaRegular.className} tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
             >
@@ -267,7 +267,7 @@ export default function Home() {
             />
           </div>
           <div className='w-full h-full rounded-2xl bg-black animated-image'>
-            <div className='z-0 absolute inset-0 bg-black bg-opacity-20'></div>
+            <div className='z-0 absolute inset-0 bg-black bg-opacity-20 rounded-2xl'></div>
             <h2
               className={`${helveticaRegular.className} tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
             >
@@ -280,7 +280,7 @@ export default function Home() {
             />
           </div>
           <div className='w-full h-full rounded-2xl bg-black animated-image'>
-            <div className='z-0 absolute inset-0 bg-black bg-opacity-20'></div>
+            <div className='z-0 absolute inset-0 bg-black bg-opacity-20 rounded-2xl'></div>
             <h2
               className={`${helveticaRegular.className} tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
             >
@@ -312,80 +312,64 @@ export default function Home() {
             ref={fadeInTextContainerRef}
             className='w-1/2  flex flex-col items-end'
           >
-            <div className='h-screen flex flex-col items-center justify-center max-w-[70%] text-left px-20 '>
+            <div className='h-screen flex flex-col items-center justify-center max-w-[80%] text-left px-20 '>
               <h3
-                className={`${helveticaRegular.className} text-col_gray_dark text-4xl `}
+                className={`${helveticaRegular.className} text-col_gray_dark text-5xl `}
               >
-                Lorem ipsum dolor sit amet.
+                Custom design & architecture
               </h3>
               <span
-                className={`${helveticaRegular.className} text-col_gray_dark text-sm pt-5 `}
+                className={`${helveticaRegular.className} text-col_gray_dark text-lg pt-5 `}
               >
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia,
-                necessitatibus.
-                <b>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Veniam, atque.
-                </b>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Libero, aliquam?
+                EcoHomes creates personalized, eco-friendly homes tailored to
+                your vision. We blend{' '}
+                <b>modern design with sustainable architecture</b>, ensuring
+                each home is unique and <b>energy-efficient</b>.
               </span>
             </div>
-            <div className='h-screen flex flex-col items-center justify-center max-w-[70%] text-left px-20 animated-text'>
+            <div className='h-screen flex flex-col items-center justify-center max-w-[80%] text-left px-20 animated-text'>
               <h3
-                className={`${helveticaRegular.className} text-col_gray_dark text-4xl `}
+                className={`${helveticaRegular.className} text-col_gray_dark text-5xl `}
               >
-                Lorem ipsum dolor sit amet.
+                Interior design & smart solutions
               </h3>
               <span
-                className={`${helveticaRegular.className} text-col_gray_dark text-sm pt-5 `}
+                className={`${helveticaRegular.className} text-col_gray_dark text-lg pt-5 `}
               >
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia,
-                necessitatibus.
-                <b>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Veniam, atque.
-                </b>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Libero, aliquam?
+                Our interiors focus on <b>style</b>, <b>comfort</b>, and{' '}
+                <b>functionality</b>. With
+                <b>integrated smart home technology</b>, we offer automated
+                systems that enhance convenience while{' '}
+                <b>reducing energy consumption</b>.
               </span>
             </div>
-            <div className='h-screen flex flex-col items-center justify-center max-w-[70%] text-left px-20 animated-text'>
+            <div className='h-screen flex flex-col items-center justify-center max-w-[80%] text-left px-20 animated-text'>
               <h3
-                className={`${helveticaRegular.className} text-col_gray_dark text-4xl`}
+                className={`${helveticaRegular.className} text-col_gray_dark text-5xl`}
               >
-                Lorem ipsum dolor sit amet.
+                Affordable solutions & financing
               </h3>
               <span
-                className={`${helveticaRegular.className} text-col_gray_dark text-sm pt-5 `}
+                className={`${helveticaRegular.className} text-col_gray_dark text-lg  pt-5 `}
               >
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia,
-                necessitatibus.
-                <b>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Veniam, atque.
-                </b>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Libero, aliquam?
+                We provide <b>cost-effective</b> eco-homes with flexible
+                financing options, making sustainable living accessible to
+                everyone without compromising quality or budget.
               </span>
             </div>
-            <div className='h-screen  flex flex-col items-center justify-center max-w-[70%] text-left px-20 animated-text'>
+            <div className='h-screen  flex flex-col items-center justify-center max-w-[80%] text-left px-20 animated-text'>
               <h3
-                className={`${helveticaRegular.className} text-col_gray_dark text-4xl`}
+                className={`${helveticaRegular.className} text-col_gray_dark text-5xl`}
               >
-                Lorem ipsum dolor sit amet.
+                Mobile & permanent eco-homes
               </h3>
               <span
-                className={`${helveticaRegular.className} text-col_gray_dark text-sm pt-5 `}
+                className={`${helveticaRegular.className} text-col_gray_dark text-md pt-5 `}
               >
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia,
-                necessitatibus.
-                <b>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Veniam, atque.
-                </b>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Libero, aliquam?
+                Whether you are seeking a mobile home or a permanent residence,
+                EcoHomes delivers <b>sustainable</b>, <b>energy-efficient</b>{' '}
+                solutions for both, tailored to your lifestyle and environmental
+                needs.
               </span>
             </div>
           </div>
@@ -393,7 +377,7 @@ export default function Home() {
           <div className='w-1/2 h-screen flex flex-col justify-center sticky top-0 '>
             <div
               ref={pinnedImageContainerRef}
-              className=' rounded-2xl h-[40vh] w-[30vw] relative overflow-hidden'
+              className=' rounded-2xl h-[50vh] w-[35vw] relative overflow-hidden'
             >
               <Image
                 src={LeftImage}
@@ -419,7 +403,39 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='h-screen'></section>
+      <section className='h-screen bg-col_white_background flex justify-center items-center '>
+        <div className='h-[90vh] w-[90vw] flex items-center justify-center rounded-2xl relative'>
+          <Image
+            src={boxForestCabin}
+            alt='Modern house'
+            className='w-full h-full z-0 object-cover rounded-2xl'
+          />
+          <div className='h-full w-full z-0 bg-black opacity-20 absolute rounded-2xl inset-0'></div>
+          <div className='absolute flex flex-col max-w-[50%] items-center justify-center '>
+            <h3
+              className={`${helveticaRegular.className} z-20 text-center text-5xl font-semi-bold text-col_white mb-12`}
+            >
+              Get in touch to start your eco-living journey today!
+            </h3>
+            <Button
+              variant='outline'
+              className='z-20 bg-col_white py-5 px-2 pl-4 rounded-full border-gray-200 hover:bg-gray-100'
+            >
+              <span
+                className={`mr-2 text-col_gray_dark ${helveticaRegular.className}`}
+              >
+                Get Started Now!
+              </span>
+              <span className='relative flex h-8 w-8 items-center justify-center'>
+                <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75'></span>
+                <span className='relative inline-flex h-full w-full items-center justify-center rounded-full bg-green-500'>
+                  <ChevronRight className='h-4 w-4 text-white' />
+                </span>
+              </span>
+            </Button>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
