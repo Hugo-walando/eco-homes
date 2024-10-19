@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import { helveticaRegular } from './public/fonts/font';
 
 export const metadata: Metadata = {
   title: 'Eco Homes',
@@ -15,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body>
+      <body className={`${helveticaRegular.variable}`}>
         <NavBar />
         {children}
         <Footer />

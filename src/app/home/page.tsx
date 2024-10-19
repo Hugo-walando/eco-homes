@@ -192,7 +192,7 @@ export default function Home() {
       </div>
       <section className='h-auto sm:h-screen w-full flex bg-col_white_background flex-col items-center '>
         <h2
-          className={`${helveticaRegular.className} px-4 text-center text-col_gray_dark text-2xl md:text-4xl pb pt-20 max-w-screen-sm  `}
+          className={`${helveticaRegular.className} px-4 text-center text-col_gray_dark text-2xl md:text-4xl  pt-20 max-w-screen-sm  `}
         >
           These eco-friendly homes are designed to meet modern needs, combining
           sustainability, efficiency, and contemporary living for a
@@ -227,8 +227,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='h-screen w-full flex bg-col_white flex-col items-center z-0'>
-        <div className='w-full px-20 flex justify-between pt-20 pb-16'>
+      <section className='md:h-screen sm:h-auto w-full flex bg-col_white flex-col items-center z-0 px-4 md:px-12 pb-6 lg:px-20'>
+        <div className='w-full py-6  flex flex-col md:flex-row justify-between md:pt-12 md:pb-12 lg:pt-20 lg:pb-16'>
           <div className=''>
             <span
               className={`${helveticaRegular.className} text-col_gray_dark uppercase`}
@@ -236,14 +236,14 @@ export default function Home() {
               Safety and secure
             </span>
             <h2
-              className={`${helveticaRegular.className} text-col_gray_dark text-5xl pt-5 max-w-[80%]`}
+              className={`${helveticaRegular.className} text-col_gray_dark font-medium text-2xl md:text-4xl lg:text-5xl pt-5 max-w-[80%]`}
             >
               Well-engineered houses with these features
             </h2>
           </div>
-          <div className='flex items-center justify-end'>
+          <div className='flex items-center md:justify-end'>
             <span
-              className={`${helveticaRegular.className} text-col_gray_dark max-w-[60%] text-right`}
+              className={`${helveticaRegular.className} text-col_gray_light font-extralight pt-6 md:pt-0 md:max-w-[60%] md:text-right`}
             >
               Our well-engineered houses are designed with precision, offerring
               a perfect blend of durabilty, efficiency, and comfort.
@@ -252,9 +252,9 @@ export default function Home() {
         </div>
         <div
           ref={fadeInSlideImagesContainerRef}
-          className='w-full h-full pb-20 px-20 flex gap-4 '
+          className='w-full h-full pb- md:pb-20 flex flex-col md:flex-row gap-4 '
         >
-          <div className='w-full h-full rounded-2xl bg-black animated-image'>
+          <div className='w-full h-[300px] md:h-full rounded-2xl bg-black animated-image'>
             <div className='z-0 absolute inset-0 bg-black bg-opacity-20 rounded-2xl'></div>
             <h2
               className={`${helveticaRegular.className} tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
@@ -267,7 +267,7 @@ export default function Home() {
               alt='modern house in nature'
             />
           </div>
-          <div className='w-full h-full rounded-2xl bg-black animated-image'>
+          <div className='w-full h-[300px] md:h-full rounded-2xl bg-black animated-image'>
             <div className='z-0 absolute inset-0 bg-black bg-opacity-20 rounded-2xl'></div>
             <h2
               className={`${helveticaRegular.className} tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
@@ -280,7 +280,7 @@ export default function Home() {
               alt='modern house in nature'
             />
           </div>
-          <div className='w-full h-full rounded-2xl bg-black animated-image'>
+          <div className='w-full h-[300px] md:h-full rounded-2xl bg-black animated-image'>
             <div className='z-0 absolute inset-0 bg-black bg-opacity-20 rounded-2xl'></div>
             <h2
               className={`${helveticaRegular.className} tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
@@ -293,7 +293,7 @@ export default function Home() {
               alt='modern house in nature'
             />
           </div>
-          <div className='w-full h-full rounded-2xl bg-black animated-image'>
+          <div className='w-full h-[300px] md:h-full rounded-2xl bg-black animated-image'>
             <div className='z-0 absolute inset-0 bg-black bg-opacity-20 rounded-2xl'></div>
             <h2
               className={`${helveticaRegular.className} tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
@@ -417,17 +417,17 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='h-screen bg-col_white_background flex justify-center items-center '>
-        <div className='h-[90vh] w-[90vw] flex items-center justify-center rounded-2xl relative'>
+      <section className='h-auto py-12 md:py-0 px-2 md:px-0 md:h-screen bg-col_white_background flex justify-center items-center '>
+        <div className='h-[300px] md:h-[90vh] md:w-[90vw] flex items-center justify-center rounded-2xl relative'>
           <Image
             src={boxForestCabin}
             alt='Modern house'
             className='w-full h-full z-0 object-cover rounded-2xl'
           />
           <div className='h-full w-full z-0 bg-black opacity-20 absolute rounded-2xl inset-0'></div>
-          <div className='absolute flex flex-col max-w-[50%] items-center justify-center '>
+          <div className='absolute flex flex-col md:max-w-[50%] items-center justify-center '>
             <h3
-              className={`${helveticaRegular.className} z-20 text-center text-5xl font-semi-bold text-col_white mb-12`}
+              className={`${helveticaRegular.className} z-20 text-center text-3xl sm:text-4xl md:text-5xl px-2 md:px-0 font-semi-bold text-col_white mb-4 md:mb-12`}
             >
               Get in touch to start your eco-living journey today!
             </h3>

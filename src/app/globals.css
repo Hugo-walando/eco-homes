@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root {
+  --font-helvetica-regular: var(--font-helvetica-regular);
+  --font-helvetica-medium: var(--font-helvetica-medium);
+}
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -69,4 +76,6 @@
   }
 }
 
-* {}
+* {
+  font-family: var(--font-helvetica-regular);
+}
