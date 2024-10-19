@@ -190,35 +190,40 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <section className='h-screen w-full flex bg-col_white_background flex-col items-center '>
+      <section className='h-auto sm:h-screen w-full flex bg-col_white_background flex-col items-center '>
         <h2
-          className={`${helveticaRegular.className} text-center text-col_gray_dark text-4xl pt-20 max-w-screen-sm `}
+          className={`${helveticaRegular.className} px-4 text-center text-col_gray_dark text-2xl md:text-4xl pb pt-20 max-w-screen-sm  `}
         >
           These eco-friendly homes are designed to meet modern needs, combining
           sustainability, efficiency, and contemporary living for a
           <span className='text-green-500'> greener future</span>.
         </h2>
-        <div className='flex w-full h-full pb-6 px-20 justify-center gap-7 items-center'>
-          <div className='w-[200px] h-[200px]'>
-            <Image
-              className='w-full h-full object-cover rounded-2xl'
-              src={boxForestCabin}
-              alt='modern house in nature'
-            />
-          </div>
-          <div className='w-[300px] h-[300px]'>
+        <div className='flex flex-col sm:flex-row w-full h-full pb-6 pt-8 px-4 sm:px-20  justify-center gap-7 items-center'>
+          {/* Image du milieu pour mobile */}
+          <div className='w-full h-[300px] sm:w-[300px] sm:h-[300px] order-1 sm:order-none sm:absolute'>
             <Image
               className='w-full h-full object-cover rounded-2xl'
               src={LeftImage}
               alt='modern house in nature'
             />
           </div>
-          <div className='w-[200px] h-[200px]'>
-            <Image
-              className='w-full h-full object-cover rounded-2xl'
-              src={housePlain}
-              alt='modern house in nature'
-            />
+
+          {/* Images de gauche et droite, alignées côte à côte sous la taille sm */}
+          <div className='flex flex-row w-full justify-between  gap-2 sm:justify-between sm:gap-48 sm:w-auto order-2 sm:order-1'>
+            <div className='w-[48%] h-[200px] sm:w-[200px] sm:h-[200px]'>
+              <Image
+                className='w-full h-full object-cover rounded-2xl'
+                src={boxForestCabin}
+                alt='modern house in nature'
+              />
+            </div>
+            <div className='w-[48%] h-[200px] sm:w-[200px] sm:h-[200px]'>
+              <Image
+                className='w-full h-full object-cover rounded-2xl'
+                src={housePlain}
+                alt='modern house in nature'
+              />
+            </div>
           </div>
         </div>
       </section>
