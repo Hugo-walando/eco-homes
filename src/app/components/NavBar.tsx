@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { helveticaMedium, helveticaRegular } from '../public/fonts/font';
@@ -14,8 +14,10 @@ const navLinks = [
 
 export default function NavBar() {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className='flex justify-between py-8 px-16 items-center absolute w-full z-10'>
+    <div className='flex justify-between py-8 px-2 md:px-16 items-center absolute w-full z-10'>
       <Link
         href='/home'
         className={`${helveticaMedium.className} font-bold text-4xl  text-col_white `}

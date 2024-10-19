@@ -139,48 +139,54 @@ export default function Home() {
 
   return (
     <>
-      <div className=' w-full h-screen overflow-hidden'>
-        <Image src={Cabin} alt='Cabin' />
+      <div className='w-full h-screen overflow-hidden'>
+        <Image
+          src={Cabin}
+          alt='Cabin'
+          className='w-full h-full object-cover absolute'
+        />
         <div className='z-0 absolute inset-0 bg-black bg-opacity-20'></div>
-        <div className='z-10 absolute bottom-20 left-16 max-w-screen-md'>
-          <h1
-            className={`${helveticaRegular.className} text-5xl font-semi-bold text-col_white mb-12`}
-          >
-            Eco-friendly tiny homes <br />
-            designed for sustainable living
-          </h1>
-          <div className='flex gap-4'>
-            <Button
-              variant='outline'
-              className=' bg-col_white py-5 px-2 pl-4 rounded-full border-gray-200 hover:bg-gray-100'
+        <div className='w-full h-full flex items-end md:justify-start justify-center px-2 pb-8 md:px-16 md:pb-20'>
+          <div className='z-10 max-w-screen-md'>
+            <h1
+              className={`${helveticaRegular.className} text-4xl md:text-5xl font-semi-bold text-col_white mb-4 md:mb-12`}
             >
-              <span
-                className={`mr-2 text-col_gray_dark ${helveticaRegular.className}`}
+              Eco-friendly tiny homes <br />
+              designed for sustainable living
+            </h1>
+            <div className='flex  gap-4'>
+              <Button
+                variant='outline'
+                className=' bg-col_white py-5 px-2 pl-4 rounded-full border-gray-200 hover:bg-gray-100'
               >
-                Get Started!
-              </span>
-              <span className='relative flex h-8 w-8 items-center justify-center'>
-                <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75'></span>
-                <span className='relative inline-flex h-full w-full items-center justify-center rounded-full bg-green-500'>
-                  <ChevronRight className='h-4 w-4 text-white' />
+                <span
+                  className={`mr-2 text-col_gray_dark ${helveticaRegular.className}`}
+                >
+                  Get Started!
                 </span>
-              </span>
-            </Button>
-            <Button
-              variant='outline'
-              className=' bg-col_white bg-opacity-50 backdrop-blur-sm py-5 px-2 pl-4 rounded-full border-gray-200 hover:bg-gray-100'
-            >
-              <span
-                className={`mr-2 text-col_white ${helveticaRegular.className}`}
+                <span className='relative flex h-8 w-8 items-center justify-center'>
+                  <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75'></span>
+                  <span className='relative inline-flex h-full w-full items-center justify-center rounded-full bg-green-500'>
+                    <ChevronRight className='h-4 w-4 text-white' />
+                  </span>
+                </span>
+              </Button>
+              <Button
+                variant='outline'
+                className=' bg-col_white bg-opacity-50 backdrop-blur-sm py-5 px-2 pl-4 rounded-full border-gray-200 hover:bg-gray-100'
               >
-                Contact Us!
-              </span>
-              <span className='relative flex h-8 w-8 items-center justify-center'>
-                <span className='relative inline-flex h-full w-full items-center justify-center rounded-full'>
-                  <ChevronRight className='h-4 w-4 text-white' />
+                <span
+                  className={`mr-2 text-col_white ${helveticaRegular.className}`}
+                >
+                  Contact Us!
                 </span>
-              </span>
-            </Button>
+                <span className='relative flex h-8 w-8 items-center justify-center'>
+                  <span className='relative inline-flex h-full w-full items-center justify-center rounded-full'>
+                    <ChevronRight className='h-4 w-4 text-white' />
+                  </span>
+                </span>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
