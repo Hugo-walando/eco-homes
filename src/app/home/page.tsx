@@ -7,6 +7,9 @@ import housePlain from '../public/images/3d-rendering-wooden-house.jpg';
 import riverHouse from '../public/images/unique-simple-small-wooden-house-design-14.jpg';
 import Carpenter from '../public/images/carpenter-man-working-wood.jpg';
 import snowHouse from '../public/images/snow-house.jpeg';
+import architects from '../public/images/architects-working-project.jpg';
+import interior from '../public/images/photorealistic-timber-house-interior-with-wooden-decor-furnishings.jpg';
+import cabin2 from '../public/images/unique-simple-small-wooden-house-design-7.jpg';
 
 import React, { useRef, useEffect } from 'react';
 import Image from 'next/image';
@@ -380,17 +383,17 @@ export default function Home() {
               className=' rounded-2xl h-[50vh] w-[35vw] relative overflow-hidden'
             >
               <Image
-                src={LeftImage}
+                src={architects}
                 alt='Modern house'
                 className='slide-image rounded-3xl w-full h-full object-cover absolute '
               />
               <Image
-                src={Cabin}
+                src={interior}
                 alt='Modern house'
                 className='slide-image slide-image-wf rounded-3xl w-full h-full object-cover absolute '
               />
               <Image
-                src={LeftImage}
+                src={cabin2}
                 alt='Modern house'
                 className='slide-image slide-image-wf  rounded-3xl w-full h-full object-cover absolute '
               />
