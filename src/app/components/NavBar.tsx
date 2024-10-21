@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { motion } from 'framer-motion';
+
 const navLinks = [
   { name: 'Home', href: '/home' },
   { name: 'About', href: '/about' },
@@ -16,17 +18,38 @@ export default function NavBar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
+  // Framer Motion animation fade in up
+  const fadeInUpVariants = {
+    hidden: { opacity: 0, y: 50 }, // Commence en bas avec une opacité de 0
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: 'easeOut' }, // Animation fluide
+    },
+  };
+
   return (
     <nav className='flex justify-between py-8 px-2 lg:px-16 items-center absolute w-full z-20'>
-      <Link
-        href='/home'
-        className={` text-nowrap font-bold text-4xl  text-col_white `}
+      <motion.div
+        initial='hidden'
+        animate='visible'
+        variants={fadeInUpVariants}
       >
-        Eco Homes
-      </Link>
+        <Link
+          href='/home'
+          className={` text-nowrap font-bold text-4xl  text-col_white `}
+        >
+          Eco Homes
+        </Link>
+      </motion.div>
 
       {/* Mobile menu toggle button */}
-      <div className='md:hidden z-20'>
+      <motion.div
+        initial='hidden'
+        animate='visible'
+        variants={fadeInUpVariants}
+        className='md:hidden z-20'
+      >
         <button
           onClick={() => setIsOpen(!isOpen)}
           className=' text-gray-500 bg-col_white rounded-full p-2 hover:text-gray-700 focus:outline-none'
@@ -46,8 +69,11 @@ export default function NavBar() {
             />
           </svg>
         </button>
-      </div>
-      <ul
+      </motion.div>
+      <motion.ul
+        initial='hidden'
+        animate='visible'
+        variants={fadeInUpVariants}
         className={`${
           isOpen ? 'translate-y-0' : 'translate-y-[-600px]'
         } z-10 flex flex-col absolute left-0 md:translate-y-0 top-0 items-center transition-transform duration-500 ease-in-out bg-opacity-40 backdrop-blur-sm border-b-2 border-col_white_background  md:bg-opacity-100 rounded-lg w-full md:w-auto md:static md:flex-row py-16 px-12 bg-col_white md:rounded-full md:py-3 md:px-6 gap-8`}
@@ -67,13 +93,19 @@ export default function NavBar() {
             </li>
           );
         })}
-      </ul>
-      <Link
-        className={` hidden md:block text-xs text-nowrap hover:bg-transparent  text-col_white_background py-3 px-6 bg-col_white_background border backdrop-blur-sm border-col_white_background bg-opacity-50 rounded-full`}
-        href='/contact'
+      </motion.ul>
+      <motion.div
+        initial='hidden'
+        animate='visible'
+        variants={fadeInUpVariants}
       >
-        Free Consultation!
-      </Link>
+        <Link
+          className={` hidden md:block text-xs text-nowrap hover:bg-transparent  text-col_white_background py-3 px-6 bg-col_white_background border backdrop-blur-sm border-col_white_background bg-opacity-50 rounded-full`}
+          href='/contact'
+        >
+          Free Consultation!
+        </Link>
+      </motion.div>
     </nav>
   );
 }
