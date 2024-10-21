@@ -30,7 +30,6 @@ export default function Home() {
 
   useEffect(() => {
     // ANIMATION PREMIERE SECTION IMAGES
-    const mm = gsap.matchMedia();
     // Sélectionner toutes les images dans le container
     if (fadeInSlideImagesContainerRef.current) {
       const images = gsap.utils.toArray<HTMLImageElement>(
@@ -90,43 +89,50 @@ export default function Home() {
 
       // Anim text fade-in
 
-      // Anim Images slides ONLY FOR DESKTOP
-      mm.add('(min-width: 600px)', () => {
-        console.log('desktop');
-
-        texts.forEach((text) => {
-          gsap.fromTo(
-            text,
-            { opacity: 0 }, // Départ
-            {
-              opacity: 1, // Fin
-              duration: 3,
-              ease: 'power2.out',
-              scrollTrigger: {
-                trigger: text, // Le déclencheur est le container d'images
-                start: 'top 65%',
-                end: '80% 20%',
-                scrub: true,
-                toggleActions: 'play none none reverse',
-              },
+      texts.forEach((text) => {
+        gsap.fromTo(
+          text,
+          { opacity: 0 }, // Départ
+          {
+            opacity: 1, // Fin
+            duration: 3,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: text, // Le déclencheur est le container d'images
+              start: 'top 65%',
+              end: '80% 20%',
+              scrub: true,
+              toggleActions: 'play none none reverse',
             },
-          );
-        });
-        texts.forEach((text, index) => {
-          const headline = text.querySelector('h3');
-          const animation = gsap
-            .timeline()
-            .to(images[index], { yPercent: 0, ease: 'power2.out', duration: 2 })
-            .set(allImages[index], { autoAlpha: 0 });
-          ScrollTrigger.create({
-            trigger: headline,
-            start: 'top 80%',
-            end: 'top 50%',
-            animation: animation,
-            scrub: true,
-          });
+          },
+        );
+      });
+      // Anim Images slides ONLY FOR DESKTOP
+
+      texts.forEach((text, index) => {
+        const headline = text.querySelector('h3');
+        const animation = gsap
+          .timeline()
+          .to(images[index], { yPercent: 0, ease: 'power2.out', duration: 2 })
+          .set(allImages[index], { autoAlpha: 0 });
+        ScrollTrigger.create({
+          trigger: headline,
+          start: 'top 80%',
+          end: 'top 50%',
+          animation: animation,
+          scrub: true,
         });
       });
+
+      window.addEventListener('resize', () => {
+        ScrollTrigger.refresh(); // Recalcule les positions
+      });
+
+      // Fonction de nettoyage si les conditions ne sont plus remplies
+      return () => {
+        // Ce return fait en sorte que tout soit nettoyé si la taille de l'écran change
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      };
     }
   }, []);
 
@@ -238,7 +244,7 @@ export default function Home() {
               Safety and secure
             </span>
             <h2
-              className={`${helveticaRegular.className} text-col_gray_dark font-medium text-3xl md:text-4xl lg:text-5xl pt-5 max-w-[80%]`}
+              className={`${helveticaRegular.className} text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl pt-5 max-w-[80%]`}
             >
               Well-engineered houses with these features
             </h2>
@@ -318,7 +324,7 @@ export default function Home() {
             Explore our services
           </span>
           <h2
-            className={`${helveticaRegular.className} text-col_gray_dark font-medium text-3xl md:text-4xl lg:text-5xl px-10 md:px-0 pt-5 md:max-w-[30%] text-center`}
+            className={`${helveticaRegular.className} text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl px-10 md:px-0 pt-5 md:max-w-[30%] text-center`}
           >
             From blueprint to key in hand
           </h2>
@@ -328,9 +334,9 @@ export default function Home() {
             ref={fadeInTextContainerRef}
             className='md:w-1/2 flex flex-col md:items-end px-3 md:px-0'
           >
-            <div className='h-auto md:h-screen flex flex-col md:items-center justify-center w-full md:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
+            <div className='h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
               <h3
-                className={`${helveticaRegular.className} max-w-[90%] md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl lg:text-5xl `}
+                className={`${helveticaRegular.className} md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
               >
                 Custom design & architecture
               </h3>
@@ -350,9 +356,9 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className='animated-text h-auto md:h-screen flex flex-col md:items-center mt-6 justify-center w-full md:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
+            <div className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
               <h3
-                className={`${helveticaRegular.className} max-w-[90%] md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl lg:text-5xl `}
+                className={`${helveticaRegular.className} md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
               >
                 Interior design & smart solutions
               </h3>
@@ -373,9 +379,9 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className='animated-text h-auto md:h-screen flex flex-col md:items-center mt-6 justify-center w-full md:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
+            <div className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
               <h3
-                className={`${helveticaRegular.className} max-w-[90%] md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl lg:text-5xl `}
+                className={`${helveticaRegular.className} md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
               >
                 Affordable solutions & financing
               </h3>
@@ -394,9 +400,9 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full md:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
+            <div className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
               <h3
-                className={`${helveticaRegular.className} max-w-[90%] md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl lg:text-5xl `}
+                className={`${helveticaRegular.className} md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
               >
                 Mobile & permanent eco-homes
               </h3>
@@ -421,7 +427,7 @@ export default function Home() {
           <div className='hidden md:flex w-1/2 h-screen flex-col justify-center md:sticky top-0 '>
             <div
               ref={pinnedImageContainerRef}
-              className=' rounded-2xl h-[50vh] w-[35vw] relative overflow-hidden'
+              className=' rounded-2xl h-[50vh] md:w-[40vw] lg:w-[35vw] relative overflow-hidden'
             >
               <Image
                 src={architects}
