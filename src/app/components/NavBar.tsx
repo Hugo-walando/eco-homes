@@ -17,7 +17,7 @@ export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className='flex justify-between py-8 px-2 lg:px-16 items-center absolute w-full z-10'>
+    <nav className='flex justify-between py-8 px-2 lg:px-16 items-center absolute w-full z-20'>
       <Link
         href='/home'
         className={` text-nowrap font-bold text-4xl  text-col_white `}
