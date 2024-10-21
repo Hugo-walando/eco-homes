@@ -139,7 +139,7 @@ export default function Home() {
 
   return (
     <>
-      <div className='w-full h-screen overflow-hidden'>
+      <section className='w-full min-h-screen h-screen'>
         <Image
           src={Cabin}
           alt='Cabin'
@@ -189,7 +189,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <section className='h-auto sm:h-screen w-full flex bg-col_white_background flex-col items-center '>
         <h2
           className={`${helveticaRegular.className} px-4 text-center text-col_gray_dark text-2xl md:text-4xl  pt-20 max-w-screen-sm  `}
@@ -198,7 +198,7 @@ export default function Home() {
           sustainability, efficiency, and contemporary living for a
           <span className='text-green-500'> greener future</span>.
         </h2>
-        <div className='flex flex-col sm:flex-row w-full h-full pb-6 pt-8 px-4 sm:px-20  justify-center gap-7 items-center'>
+        <div className='flex flex-col sm:flex-row w-full h-full pb-12 pt-8 px-4 sm:px-20  justify-center gap-7 items-center'>
           {/* Image du milieu pour mobile */}
           <div className='w-full h-[300px] sm:w-[300px] sm:h-[300px] order-1 sm:order-none sm:absolute'>
             <Image

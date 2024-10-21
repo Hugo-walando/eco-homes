@@ -2,11 +2,11 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className='bg-white'>
+    <footer className='bg-col_white'>
       <div className='mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8'>
         <div className='grid grid-cols-1 gap-8 lg:grid-cols-3'>
           <div>
-            <div className='text-teal-600 text-3xl font-bold'>Eco Homes</div>
+            <div className='text-green-500 text-3xl font-bold'>Eco Homes</div>
 
             <p className='mt-4 max-w-xs text-gray-500'>
               Our team provides expert guidance from concept to completion,
@@ -289,15 +289,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className='flex justify-between'>
-          <p className='text-sm text-gray-500'>
+        <div className='flex flex-col md:flex-row md:justify-between'>
+          <p className='text-sm mt-4 md:mt-0 text-gray-500'>
             &copy; <span className='text-green-500'>2024 Eco Homes</span>. All
             rights reserved.
           </p>
-          <p className='text-sm text-gray-500'>
+          <p className='text-sm mt-4 md:mt-0 text-gray-500'>
             Privacy Policy | Terms and Conditions
           </p>
-          <p className='text-sm text-gray-500'>
+          <p className='mt-4 md:mt-0 text-sm text-gray-500'>
             Made by <span className='text-green-500'>Hugo Walandowitsch</span> |
             Design inspired by Zeyox Studio
           </p>
