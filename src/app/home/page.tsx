@@ -318,7 +318,7 @@ export default function Home() {
             Explore our services
           </span>
           <h2
-            className={`${helveticaRegular.className} text-col_gray_dark font-medium text-3xl md:text-4xl lg:text-5xl px-10 pt-5 md:max-w-[25%] text-center`}
+            className={`${helveticaRegular.className} text-col_gray_dark font-medium text-3xl md:text-4xl lg:text-5xl px-10 md:px-0 pt-5 md:max-w-[30%] text-center`}
           >
             From blueprint to key in hand
           </h2>
