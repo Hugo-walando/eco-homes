@@ -18,6 +18,7 @@ import { ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import gsap from 'gsap';
 import { ScrollTrigger } from '@/lib/gsap';
+import { motion } from 'framer-motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,13 +73,9 @@ export default function Home() {
         fadeInTextContainerRef.current.querySelectorAll('.animated-text'),
       );
 
-      console.log(texts);
-
       const images = gsap.utils.toArray<HTMLImageElement>(
         pinnedImageContainerRef.current.querySelectorAll('.slide-image-wf'),
       );
-
-      console.log(images);
 
       gsap.set(images, { yPercent: 101 });
 
@@ -144,6 +141,16 @@ export default function Home() {
     requestAnimationFrame(raf);
   }, []);
 
+  // Framer Motion animation fade in up
+  const fadeInUpVariants5 = {
+    hidden: { opacity: 0, y: 50 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: 'easeOut' },
+    },
+  };
+
   return (
     <>
       <section className='w-full h-dvh overflow-hidden'>
@@ -155,13 +162,23 @@ export default function Home() {
         <div className='z-0 absolute inset-0 bg-black bg-opacity-20'></div>
         <div className='w-full h-full flex items-end md:justify-start justify-center px-2 pb-8 md:px-16 md:pb-20'>
           <div className='z-10 max-w-screen-md'>
-            <h1
+            <motion.h1
+              initial='hidden'
+              whileInView='animate'
+              variants={fadeInUpVariants5}
+              viewport={{ once: true }}
               className={` text-4xl md:text-5xl font-semi-bold text-col_white mb-4 md:mb-12`}
             >
               Eco-friendly tiny homes <br />
               designed for sustainable living
-            </h1>
-            <div className='flex  gap-4'>
+            </motion.h1>
+            <motion.div
+              initial='hidden'
+              whileInView='animate'
+              variants={fadeInUpVariants5}
+              viewport={{ once: true }}
+              className='flex  gap-4'
+            >
               <Button
                 variant='outline'
                 className=' bg-col_white py-5 px-2 pl-4 rounded-full border-gray-200 hover:bg-gray-100'
@@ -185,30 +202,46 @@ export default function Home() {
                   </span>
                 </span>
               </Button>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
       <section className='h-auto sm:h-screen w-full flex bg-col_white_background flex-col items-center '>
-        <h2
+        <motion.h2
+          initial='hidden'
+          whileInView='animate'
+          variants={fadeInUpVariants5}
+          viewport={{ once: true }}
           className={` px-4 text-center text-col_gray_dark text-2xl md:text-4xl  pt-20 max-w-screen-sm  `}
         >
           These eco-friendly homes are designed to meet modern needs, combining
           sustainability, efficiency, and contemporary living for a
           <span className='text-green-500'> greener future</span>.
-        </h2>
+        </motion.h2>
         <div className='flex flex-col sm:flex-row w-full h-full pb-12 pt-8 px-4 sm:px-20  justify-center gap-7 items-center'>
           {/* Image du milieu pour mobile */}
-          <div className='w-full h-[300px] sm:w-[300px] sm:h-[300px] order-1 sm:order-none sm:absolute'>
+          <motion.div
+            initial='hidden'
+            whileInView='animate'
+            variants={fadeInUpVariants5}
+            viewport={{ once: true }}
+            className='w-full h-[300px] sm:w-[300px] sm:h-[300px] order-1 sm:order-none sm:absolute z-10'
+          >
             <Image
               className='w-full h-full object-cover rounded-2xl'
               src={LeftImage}
               alt='modern house in nature'
             />
-          </div>
+          </motion.div>
 
           {/* Images de gauche et droite, alignées côte à côte sous la taille sm */}
-          <div className='flex flex-row w-full justify-between  gap-2 sm:justify-between sm:gap-48 sm:w-auto order-2 sm:order-1'>
+          <motion.div
+            initial='hidden'
+            whileInView='animate'
+            variants={fadeInUpVariants5}
+            viewport={{ once: true }}
+            className='flex flex-row w-full justify-between  gap-2 sm:justify-between sm:gap-48 sm:w-auto order-2 sm:order-1'
+          >
             <div className='w-[48%] h-[200px] sm:w-[200px] sm:h-[200px]'>
               <Image
                 className='w-full h-full object-cover rounded-2xl'
@@ -223,28 +256,42 @@ export default function Home() {
                 alt='modern house in nature'
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
       <section className='md:h-screen sm:h-auto w-full flex bg-col_white flex-col items-center z-0 px-4 md:px-12 pb-6 lg:px-20'>
         <div className='w-full py-6  flex flex-col md:flex-row justify-between md:pt-12 md:pb-12 lg:pt-20 lg:pb-16'>
           <div className=''>
-            <span className={` text-col_gray_dark uppercase`}>
+            <motion.span
+              initial='hidden'
+              whileInView='animate'
+              variants={fadeInUpVariants5}
+              viewport={{ once: true }}
+              className={` text-col_gray_dark uppercase`}
+            >
               Safety and secure
-            </span>
-            <h2
+            </motion.span>
+            <motion.h2
+              initial='hidden'
+              whileInView='animate'
+              variants={fadeInUpVariants5}
+              viewport={{ once: true }}
               className={` text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl pt-5 max-w-[80%]`}
             >
               Well-engineered houses with these features
-            </h2>
+            </motion.h2>
           </div>
           <div className='flex items-center md:justify-end'>
-            <span
+            <motion.span
+              initial='hidden'
+              whileInView='animate'
+              variants={fadeInUpVariants5}
+              viewport={{ once: true }}
               className={` text-col_gray_light font-extralight pt-6 md:pt-0 md:max-w-[60%] md:text-right`}
             >
               Our well-engineered houses are designed with precision, offerring
               a perfect blend of durabilty, efficiency, and comfort.
-            </span>
+            </motion.span>
           </div>
         </div>
         <div
@@ -253,11 +300,15 @@ export default function Home() {
         >
           <div className='w-full h-[300px] md:h-full rounded-2xl bg-black animated-image'>
             <div className='z-0 absolute inset-0 bg-black bg-opacity-20 rounded-2xl'></div>
-            <h2
+            <motion.h2
+              initial='hidden'
+              whileInView='animate'
+              variants={fadeInUpVariants5}
+              viewport={{ once: true }}
               className={` tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
             >
               Eco friendly
-            </h2>
+            </motion.h2>
             <Image
               className='w-full h-full object-cover rounded-2xl '
               src={riverHouse}
@@ -266,11 +317,15 @@ export default function Home() {
           </div>
           <div className='w-full h-[300px] md:h-full rounded-2xl bg-black animated-image'>
             <div className='z-0 absolute inset-0 bg-black bg-opacity-20 rounded-2xl'></div>
-            <h2
+            <motion.h2
+              initial='hidden'
+              whileInView='animate'
+              variants={fadeInUpVariants5}
+              viewport={{ once: true }}
               className={` tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
             >
               Earthquake & cyclone resistant
-            </h2>
+            </motion.h2>
             <Image
               className='w-full h-full object-cover rounded-2xl'
               src={Cabin}
@@ -279,11 +334,15 @@ export default function Home() {
           </div>
           <div className='w-full h-[300px] md:h-full rounded-2xl bg-black animated-image'>
             <div className='z-0 absolute inset-0 bg-black bg-opacity-20 rounded-2xl'></div>
-            <h2
+            <motion.h2
+              initial='hidden'
+              whileInView='animate'
+              variants={fadeInUpVariants5}
+              viewport={{ once: true }}
               className={` tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
             >
               Rapid construction
-            </h2>
+            </motion.h2>
             <Image
               className='w-full h-full object-cover rounded-2xl'
               src={Carpenter}
@@ -292,11 +351,15 @@ export default function Home() {
           </div>
           <div className='w-full h-[300px] md:h-full rounded-2xl bg-black animated-image'>
             <div className='z-0 absolute inset-0 bg-black bg-opacity-20 rounded-2xl'></div>
-            <h2
+            <motion.h2
+              initial='hidden'
+              whileInView='animate'
+              variants={fadeInUpVariants5}
+              viewport={{ once: true }}
               className={` tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
             >
               Thermal efficiency
-            </h2>
+            </motion.h2>
             <Image
               className='w-full h-full object-cover rounded-2xl'
               src={snowHouse}
@@ -307,16 +370,33 @@ export default function Home() {
       </section>
       <section className='bg-col_white_background'>
         <div className='w-full flex flex-col items-center justify-right pt-20 pb-5'>
-          <span className={` text-col_gray_dark uppercase`}>
+          <motion.span
+            initial='hidden'
+            whileInView='animate'
+            variants={fadeInUpVariants5}
+            viewport={{ once: true }}
+            className={` text-col_gray_dark uppercase`}
+          >
             Explore our services
-          </span>
-          <h2
+          </motion.span>
+          <motion.h2
+            initial='hidden'
+            whileInView='animate'
+            variants={fadeInUpVariants5}
+            viewport={{ once: true }}
             className={` text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl px-10 md:px-0 pt-5 md:max-w-[30%] text-center`}
           >
             From blueprint to key in hand
-          </h2>
+          </motion.h2>
         </div>
-        <div ref={mainContainerRef} className='flex'>
+        <motion.div
+          initial='hidden'
+          whileInView='animate'
+          variants={fadeInUpVariants5}
+          viewport={{ once: true }}
+          ref={mainContainerRef}
+          className='flex'
+        >
           <div
             ref={fadeInTextContainerRef}
             className='md:w-1/2 flex flex-col md:items-end px-3 md:px-0'
@@ -438,17 +518,29 @@ export default function Home() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
       <section className='h-auto py-12 md:py-0 px-2 md:px-0 md:h-screen bg-col_white_background flex justify-center items-center '>
-        <div className='h-[300px] md:h-[90vh] md:w-[90vw] flex items-center justify-center rounded-2xl relative'>
+        <motion.div
+          initial='hidden'
+          whileInView='animate'
+          variants={fadeInUpVariants5}
+          viewport={{ once: true }}
+          className='h-[300px] md:h-[90vh] md:w-[90vw] flex items-center justify-center rounded-2xl relative'
+        >
           <Image
             src={boxForestCabin}
             alt='Modern house'
             className='w-full h-full z-0 object-cover rounded-2xl'
           />
           <div className='h-full w-full z-0 bg-black opacity-20 absolute rounded-2xl inset-0'></div>
-          <div className='absolute flex flex-col md:max-w-[50%] items-center justify-center '>
+          <motion.div
+            initial='hidden'
+            whileInView='animate'
+            variants={fadeInUpVariants5}
+            viewport={{ once: true }}
+            className='absolute flex flex-col md:max-w-[50%] items-center justify-center '
+          >
             <h3
               className={` z-20 text-center text-3xl sm:text-4xl md:text-5xl px-2 md:px-0 font-semi-bold text-col_white mb-4 md:mb-12`}
             >
@@ -468,8 +560,8 @@ export default function Home() {
                 </span>
               </span>
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
     </>
   );
