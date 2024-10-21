@@ -68,7 +68,7 @@ export default function NavBar() {
         })}
       </ul>
       <Link
-        className={` hidden md:block text-xs text-nowrap text-col_white_background py-3 px-6 bg-col_white_background border backdrop-blur-sm border-col_white_background bg-opacity-50 rounded-full`}
+        className={` hidden md:block text-xs text-nowrap hover:bg-transparent  text-col_white_background py-3 px-6 bg-col_white_background border backdrop-blur-sm border-col_white_background bg-opacity-50 rounded-full`}
         href='/contact'
       >
         Free Consultation!

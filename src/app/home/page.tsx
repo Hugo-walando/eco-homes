@@ -176,7 +176,7 @@ export default function Home() {
               </Button>
               <Button
                 variant='outline'
-                className=' bg-col_white bg-opacity-50 backdrop-blur-sm py-5 px-2 pl-4 rounded-full border-gray-200 hover:bg-gray-100'
+                className=' bg-col_white bg-opacity-50 backdrop-blur-sm hover:bg-transparent py-5 px-2 pl-4 rounded-full border-col_white'
               >
                 <span className={`mr-2 text-col_white `}>Contact Us!</span>
                 <span className='relative flex h-8 w-8 items-center justify-center'>
