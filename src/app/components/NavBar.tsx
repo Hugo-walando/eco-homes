@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { helveticaMedium, helveticaRegular } from '../public/fonts/font';
 const navLinks = [
   { name: 'Home', href: '/home' },
   { name: 'About', href: '/about' },
@@ -20,7 +19,7 @@ export default function NavBar() {
     <nav className='flex justify-between py-8 px-2 md:px-16 items-center absolute w-full z-10'>
       <Link
         href='/home'
-        className={`${helveticaMedium.className} text-nowrap font-bold text-4xl  text-col_white `}
+        className={` text-nowrap font-bold text-4xl  text-col_white `}
       >
         Eco Homes
       </Link>
@@ -57,7 +56,7 @@ export default function NavBar() {
           return (
             <li key={link.href} className='flex items-center'>
               <Link
-                className={`${helveticaRegular.className} ${
+                className={` ${
                   isActive ? 'md:text-green-500' : 'md:text-col_gray_dark'
                 } text-lg md:text-xs text-col_white hover:text-col_gray_light`}
                 href={link.href}
@@ -69,7 +68,7 @@ export default function NavBar() {
         })}
       </ul>
       <Link
-        className={`${helveticaRegular.className} hidden md:block text-xs text-nowrap text-col_white_background py-3 px-6 bg-col_white_background border backdrop-blur-sm border-col_white_background bg-opacity-50 rounded-full`}
+        className={` hidden md:block text-xs text-nowrap text-col_white_background py-3 px-6 bg-col_white_background border backdrop-blur-sm border-col_white_background bg-opacity-50 rounded-full`}
         href='/contact'
       >
         Free Consultation!

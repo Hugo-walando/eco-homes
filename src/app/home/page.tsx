@@ -16,7 +16,6 @@ import Image from 'next/image';
 import Lenis from 'lenis';
 import { ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { helveticaRegular } from '../public/fonts/font';
 import gsap from 'gsap';
 import { ScrollTrigger } from '@/lib/gsap';
 
@@ -157,7 +156,7 @@ export default function Home() {
         <div className='w-full h-full flex items-end md:justify-start justify-center px-2 pb-8 md:px-16 md:pb-20'>
           <div className='z-10 max-w-screen-md'>
             <h1
-              className={`${helveticaRegular.className} text-4xl md:text-5xl font-semi-bold text-col_white mb-4 md:mb-12`}
+              className={` text-4xl md:text-5xl font-semi-bold text-col_white mb-4 md:mb-12`}
             >
               Eco-friendly tiny homes <br />
               designed for sustainable living
@@ -167,11 +166,7 @@ export default function Home() {
                 variant='outline'
                 className=' bg-col_white py-5 px-2 pl-4 rounded-full border-gray-200 hover:bg-gray-100'
               >
-                <span
-                  className={`mr-2 text-col_gray_dark ${helveticaRegular.className}`}
-                >
-                  Get Started!
-                </span>
+                <span className={`mr-2 text-col_gray_dark `}>Get Started!</span>
                 <span className='relative flex h-8 w-8 items-center justify-center'>
                   <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75'></span>
                   <span className='relative inline-flex h-full w-full items-center justify-center rounded-full bg-green-500'>
@@ -183,11 +178,7 @@ export default function Home() {
                 variant='outline'
                 className=' bg-col_white bg-opacity-50 backdrop-blur-sm py-5 px-2 pl-4 rounded-full border-gray-200 hover:bg-gray-100'
               >
-                <span
-                  className={`mr-2 text-col_white ${helveticaRegular.className}`}
-                >
-                  Contact Us!
-                </span>
+                <span className={`mr-2 text-col_white `}>Contact Us!</span>
                 <span className='relative flex h-8 w-8 items-center justify-center'>
                   <span className='relative inline-flex h-full w-full items-center justify-center rounded-full'>
                     <ChevronRight className='h-4 w-4 text-white' />
@@ -200,7 +191,7 @@ export default function Home() {
       </section>
       <section className='h-auto sm:h-screen w-full flex bg-col_white_background flex-col items-center '>
         <h2
-          className={`${helveticaRegular.className} px-4 text-center text-col_gray_dark text-2xl md:text-4xl  pt-20 max-w-screen-sm  `}
+          className={` px-4 text-center text-col_gray_dark text-2xl md:text-4xl  pt-20 max-w-screen-sm  `}
         >
           These eco-friendly homes are designed to meet modern needs, combining
           sustainability, efficiency, and contemporary living for a
@@ -238,20 +229,18 @@ export default function Home() {
       <section className='md:h-screen sm:h-auto w-full flex bg-col_white flex-col items-center z-0 px-4 md:px-12 pb-6 lg:px-20'>
         <div className='w-full py-6  flex flex-col md:flex-row justify-between md:pt-12 md:pb-12 lg:pt-20 lg:pb-16'>
           <div className=''>
-            <span
-              className={`${helveticaRegular.className} text-col_gray_dark uppercase`}
-            >
+            <span className={` text-col_gray_dark uppercase`}>
               Safety and secure
             </span>
             <h2
-              className={`${helveticaRegular.className} text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl pt-5 max-w-[80%]`}
+              className={` text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl pt-5 max-w-[80%]`}
             >
               Well-engineered houses with these features
             </h2>
           </div>
           <div className='flex items-center md:justify-end'>
             <span
-              className={`${helveticaRegular.className} text-col_gray_light font-extralight pt-6 md:pt-0 md:max-w-[60%] md:text-right`}
+              className={` text-col_gray_light font-extralight pt-6 md:pt-0 md:max-w-[60%] md:text-right`}
             >
               Our well-engineered houses are designed with precision, offerring
               a perfect blend of durabilty, efficiency, and comfort.
@@ -265,7 +254,7 @@ export default function Home() {
           <div className='w-full h-[300px] md:h-full rounded-2xl bg-black animated-image'>
             <div className='z-0 absolute inset-0 bg-black bg-opacity-20 rounded-2xl'></div>
             <h2
-              className={`${helveticaRegular.className} tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
+              className={` tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
             >
               Eco friendly
             </h2>
@@ -278,7 +267,7 @@ export default function Home() {
           <div className='w-full h-[300px] md:h-full rounded-2xl bg-black animated-image'>
             <div className='z-0 absolute inset-0 bg-black bg-opacity-20 rounded-2xl'></div>
             <h2
-              className={`${helveticaRegular.className} tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
+              className={` tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
             >
               Earthquake & cyclone resistant
             </h2>
@@ -291,7 +280,7 @@ export default function Home() {
           <div className='w-full h-[300px] md:h-full rounded-2xl bg-black animated-image'>
             <div className='z-0 absolute inset-0 bg-black bg-opacity-20 rounded-2xl'></div>
             <h2
-              className={`${helveticaRegular.className} tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
+              className={` tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
             >
               Rapid construction
             </h2>
@@ -304,7 +293,7 @@ export default function Home() {
           <div className='w-full h-[300px] md:h-full rounded-2xl bg-black animated-image'>
             <div className='z-0 absolute inset-0 bg-black bg-opacity-20 rounded-2xl'></div>
             <h2
-              className={`${helveticaRegular.className} tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
+              className={` tracking-wider font-semibold absolute bottom-4 left-4 max-w-[80%] text-3xl text-col_white `}
             >
               Thermal efficiency
             </h2>
@@ -318,13 +307,11 @@ export default function Home() {
       </section>
       <section className='bg-col_white_background'>
         <div className='w-full flex flex-col items-center justify-right pt-20 pb-5'>
-          <span
-            className={`${helveticaRegular.className} text-col_gray_dark uppercase`}
-          >
+          <span className={` text-col_gray_dark uppercase`}>
             Explore our services
           </span>
           <h2
-            className={`${helveticaRegular.className} text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl px-10 md:px-0 pt-5 md:max-w-[30%] text-center`}
+            className={` text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl px-10 md:px-0 pt-5 md:max-w-[30%] text-center`}
           >
             From blueprint to key in hand
           </h2>
@@ -336,12 +323,12 @@ export default function Home() {
           >
             <div className='h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
               <h3
-                className={`${helveticaRegular.className} md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
+                className={` md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
               >
                 Custom design & architecture
               </h3>
               <span
-                className={`${helveticaRegular.className} text-col_gray_light pt-6 mb-6 md:pb-0 md:pt-6 md:max-w-full md:text-lg  `}
+                className={` text-col_gray_light pt-6 mb-6 md:pb-0 md:pt-6 md:max-w-full md:text-lg  `}
               >
                 EcoHomes creates personalized, eco-friendly homes tailored to
                 your vision. We blend{' '}
@@ -358,12 +345,12 @@ export default function Home() {
             </div>
             <div className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
               <h3
-                className={`${helveticaRegular.className} md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
+                className={` md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
               >
                 Interior design & smart solutions
               </h3>
               <span
-                className={`${helveticaRegular.className} text-col_gray_light pt-6 mb-6 md:pb-0 md:pt-6 md:max-w-full md:text-lg  `}
+                className={` text-col_gray_light pt-6 mb-6 md:pb-0 md:pt-6 md:max-w-full md:text-lg  `}
               >
                 Our interiors focus on <b>style</b>, <b>comfort</b>, and{' '}
                 <b>functionality</b>. With
@@ -381,12 +368,12 @@ export default function Home() {
             </div>
             <div className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
               <h3
-                className={`${helveticaRegular.className} md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
+                className={` md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
               >
                 Affordable solutions & financing
               </h3>
               <span
-                className={`${helveticaRegular.className} text-col_gray_light pt-6 mb-6 md:pb-0 md:pt-6 md:max-w-full md:text-lg  `}
+                className={` text-col_gray_light pt-6 mb-6 md:pb-0 md:pt-6 md:max-w-full md:text-lg  `}
               >
                 We provide <b>cost-effective</b> eco-homes with flexible
                 financing options, making sustainable living accessible to
@@ -402,12 +389,12 @@ export default function Home() {
             </div>
             <div className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
               <h3
-                className={`${helveticaRegular.className} md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
+                className={` md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
               >
                 Mobile & permanent eco-homes
               </h3>
               <span
-                className={`${helveticaRegular.className} text-col_gray_light pt-6 mb-6 md:pb-0 md:pt-6 md:max-w-full md:text-lg  `}
+                className={` text-col_gray_light pt-6 mb-6 md:pb-0 md:pt-6 md:max-w-full md:text-lg  `}
               >
                 Whether you are seeking a mobile home or a permanent residence,
                 EcoHomes delivers <b>sustainable</b>, <b>energy-efficient</b>{' '}
@@ -463,7 +450,7 @@ export default function Home() {
           <div className='h-full w-full z-0 bg-black opacity-20 absolute rounded-2xl inset-0'></div>
           <div className='absolute flex flex-col md:max-w-[50%] items-center justify-center '>
             <h3
-              className={`${helveticaRegular.className} z-20 text-center text-3xl sm:text-4xl md:text-5xl px-2 md:px-0 font-semi-bold text-col_white mb-4 md:mb-12`}
+              className={` z-20 text-center text-3xl sm:text-4xl md:text-5xl px-2 md:px-0 font-semi-bold text-col_white mb-4 md:mb-12`}
             >
               Get in touch to start your eco-living journey today!
             </h3>
@@ -471,9 +458,7 @@ export default function Home() {
               variant='outline'
               className='z-20 bg-col_white py-5 px-2 pl-4 rounded-full border-gray-200 hover:bg-gray-100'
             >
-              <span
-                className={`mr-2 text-col_gray_dark ${helveticaRegular.className}`}
-              >
+              <span className={`mr-2 text-col_gray_dark `}>
                 Get Started Now!
               </span>
               <span className='relative flex h-8 w-8 items-center justify-center'>
