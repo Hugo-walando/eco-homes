@@ -143,7 +143,7 @@ export default function Home() {
         <Image
           src={Cabin}
           alt='Cabin'
-          className='w-full h-screen object-cover absolute'
+          className='w-full h-dvh object-cover absolute'
         />
         <div className='z-0 absolute inset-0 bg-black bg-opacity-20'></div>
         <div className='w-full h-full flex items-end md:justify-start justify-center px-2 pb-8 md:px-16 md:pb-20'>
