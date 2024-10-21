@@ -74,9 +74,13 @@ export default function Home() {
         fadeInTextContainerRef.current.querySelectorAll('.animated-text'),
       );
 
+      console.log(texts);
+
       const images = gsap.utils.toArray<HTMLImageElement>(
         pinnedImageContainerRef.current.querySelectorAll('.slide-image-wf'),
       );
+
+      console.log(images);
 
       gsap.set(images, { yPercent: 101 });
 
@@ -84,32 +88,30 @@ export default function Home() {
         pinnedImageContainerRef.current.querySelectorAll('.slide-image'),
       );
 
-      console.log(fadeInTextContainerRef.current!.scrollHeight);
-
       // Anim text fade-in
-      texts.forEach((text) => {
-        gsap.fromTo(
-          text,
-          { opacity: 0 }, // Départ
-          {
-            opacity: 1, // Fin
-            duration: 3,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: text, // Le déclencheur est le container d'images
-              start: 'top 65%',
-              end: '80% 20%',
-              scrub: true,
-              toggleActions: 'play none none reverse',
-            },
-          },
-        );
-      });
 
       // Anim Images slides ONLY FOR DESKTOP
       mm.add('(min-width: 600px)', () => {
         console.log('desktop');
 
+        texts.forEach((text) => {
+          gsap.fromTo(
+            text,
+            { opacity: 0 }, // Départ
+            {
+              opacity: 1, // Fin
+              duration: 3,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: text, // Le déclencheur est le container d'images
+                start: 'top 65%',
+                end: '80% 20%',
+                scrub: true,
+                toggleActions: 'play none none reverse',
+              },
+            },
+          );
+        });
         texts.forEach((text, index) => {
           const headline = text.querySelector('h3');
           const animation = gsap
@@ -236,7 +238,7 @@ export default function Home() {
               Safety and secure
             </span>
             <h2
-              className={`${helveticaRegular.className} text-col_gray_dark font-medium text-2xl md:text-4xl lg:text-5xl pt-5 max-w-[80%]`}
+              className={`${helveticaRegular.className} text-col_gray_dark font-medium text-3xl md:text-4xl lg:text-5xl pt-5 max-w-[80%]`}
             >
               Well-engineered houses with these features
             </h2>
@@ -309,14 +311,14 @@ export default function Home() {
         </div>
       </section>
       <section className='bg-col_white_background'>
-        <div className='w-full  flex flex-col items-center justify-right pt-20  '>
+        <div className='w-full flex flex-col items-center justify-right pt-20 pb-5'>
           <span
             className={`${helveticaRegular.className} text-col_gray_dark uppercase`}
           >
             Explore our services
           </span>
           <h2
-            className={`${helveticaRegular.className} text-col_gray_dark text-5xl pt-5 max-w-[25%] text-center`}
+            className={`${helveticaRegular.className} text-col_gray_dark font-medium text-3xl md:text-4xl lg:text-5xl px-10 pt-5 md:max-w-[25%] text-center`}
           >
             From blueprint to key in hand
           </h2>
@@ -324,31 +326,38 @@ export default function Home() {
         <div ref={mainContainerRef} className='flex'>
           <div
             ref={fadeInTextContainerRef}
-            className='w-1/2  flex flex-col items-end'
+            className='md:w-1/2 flex flex-col md:items-end px-3 md:px-0'
           >
-            <div className='h-screen flex flex-col items-center justify-center max-w-[80%] text-left px-20 '>
+            <div className='h-auto md:h-screen flex flex-col md:items-center justify-center w-full md:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
               <h3
-                className={`${helveticaRegular.className} text-col_gray_dark text-5xl `}
+                className={`${helveticaRegular.className} max-w-[90%] md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl lg:text-5xl `}
               >
                 Custom design & architecture
               </h3>
               <span
-                className={`${helveticaRegular.className} text-col_gray_dark text-lg pt-5 `}
+                className={`${helveticaRegular.className} text-col_gray_light pt-6 mb-6 md:pb-0 md:pt-6 md:max-w-full md:text-lg  `}
               >
                 EcoHomes creates personalized, eco-friendly homes tailored to
                 your vision. We blend{' '}
                 <b>modern design with sustainable architecture</b>, ensuring
                 each home is unique and <b>energy-efficient</b>.
               </span>
+              <div className='md:hidden w-full h-[300px]'>
+                <Image
+                  className=' w-full h-full object-cover rounded-2xl '
+                  src={architects}
+                  alt='modern house in nature'
+                />
+              </div>
             </div>
-            <div className='h-screen flex flex-col items-center justify-center max-w-[80%] text-left px-20 animated-text'>
+            <div className='animated-text h-auto md:h-screen flex flex-col md:items-center mt-6 justify-center w-full md:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
               <h3
-                className={`${helveticaRegular.className} text-col_gray_dark text-5xl `}
+                className={`${helveticaRegular.className} max-w-[90%] md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl lg:text-5xl `}
               >
                 Interior design & smart solutions
               </h3>
               <span
-                className={`${helveticaRegular.className} text-col_gray_dark text-lg pt-5 `}
+                className={`${helveticaRegular.className} text-col_gray_light pt-6 mb-6 md:pb-0 md:pt-6 md:max-w-full md:text-lg  `}
               >
                 Our interiors focus on <b>style</b>, <b>comfort</b>, and{' '}
                 <b>functionality</b>. With
@@ -356,39 +365,60 @@ export default function Home() {
                 systems that enhance convenience while{' '}
                 <b>reducing energy consumption</b>.
               </span>
+              <div className='md:hidden w-full h-[300px]'>
+                <Image
+                  className=' w-full h-full object-cover rounded-2xl '
+                  src={interior}
+                  alt='modern house in nature'
+                />
+              </div>
             </div>
-            <div className='h-screen flex flex-col items-center justify-center max-w-[80%] text-left px-20 animated-text'>
+            <div className='animated-text h-auto md:h-screen flex flex-col md:items-center mt-6 justify-center w-full md:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
               <h3
-                className={`${helveticaRegular.className} text-col_gray_dark text-5xl`}
+                className={`${helveticaRegular.className} max-w-[90%] md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl lg:text-5xl `}
               >
                 Affordable solutions & financing
               </h3>
               <span
-                className={`${helveticaRegular.className} text-col_gray_dark text-lg  pt-5 `}
+                className={`${helveticaRegular.className} text-col_gray_light pt-6 mb-6 md:pb-0 md:pt-6 md:max-w-full md:text-lg  `}
               >
                 We provide <b>cost-effective</b> eco-homes with flexible
                 financing options, making sustainable living accessible to
                 everyone without compromising quality or budget.
               </span>
+              <div className='md:hidden w-full h-[300px]'>
+                <Image
+                  className=' w-full h-full object-cover rounded-2xl '
+                  src={cabin2}
+                  alt='modern house in nature'
+                />
+              </div>
             </div>
-            <div className='h-screen  flex flex-col items-center justify-center max-w-[80%] text-left px-20 animated-text'>
+            <div className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full md:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
               <h3
-                className={`${helveticaRegular.className} text-col_gray_dark text-5xl`}
+                className={`${helveticaRegular.className} max-w-[90%] md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl lg:text-5xl `}
               >
                 Mobile & permanent eco-homes
               </h3>
               <span
-                className={`${helveticaRegular.className} text-col_gray_dark text-md pt-5 `}
+                className={`${helveticaRegular.className} text-col_gray_light pt-6 mb-6 md:pb-0 md:pt-6 md:max-w-full md:text-lg  `}
               >
                 Whether you are seeking a mobile home or a permanent residence,
                 EcoHomes delivers <b>sustainable</b>, <b>energy-efficient</b>{' '}
                 solutions for both, tailored to your lifestyle and environmental
                 needs.
               </span>
+              <div className='md:hidden w-full h-[300px]'>
+                <Image
+                  className=' w-full h-full object-cover rounded-2xl '
+                  src={LeftImage}
+                  alt='modern house in nature'
+                />
+              </div>
             </div>
           </div>
 
-          <div className='w-1/2 h-screen flex flex-col justify-center sticky top-0 '>
+          <div className='hidden md:flex w-1/2 h-screen flex-col justify-center md:sticky top-0 '>
             <div
               ref={pinnedImageContainerRef}
               className=' rounded-2xl h-[50vh] w-[35vw] relative overflow-hidden'
