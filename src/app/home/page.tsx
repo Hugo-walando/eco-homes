@@ -28,6 +28,8 @@ export default function Home() {
   const pinnedImageContainerRef = useRef<HTMLDivElement>(null);
   const mainContainerRef = useRef<HTMLDivElement>(null);
 
+  const mm = gsap.matchMedia();
+
   useEffect(() => {
     // ANIMATION PREMIERE SECTION IMAGES
     // Sélectionner toutes les images dans le container
@@ -85,23 +87,25 @@ export default function Home() {
 
       // Anim text fade-in
 
-      texts.forEach((text) => {
-        gsap.fromTo(
-          text,
-          { opacity: 0 }, // Départ
-          {
-            opacity: 1, // Fin
-            duration: 3,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: text, // Le déclencheur est le container d'images
-              start: 'top 65%',
-              end: '80% 20%',
-              scrub: true,
-              toggleActions: 'play none none reverse',
+      mm.add('(min-width: 600px)', () => {
+        texts.forEach((text) => {
+          gsap.fromTo(
+            text,
+            { opacity: 0 }, // Départ
+            {
+              opacity: 1, // Fin
+              duration: 3,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: text, // Le déclencheur est le container d'images
+                start: 'top 65%',
+                end: '80% 20%',
+                scrub: true,
+                toggleActions: 'play none none reverse',
+              },
             },
-          },
-        );
+          );
+        });
       });
       // Anim Images slides ONLY FOR DESKTOP
 
@@ -423,7 +427,13 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
+            <motion.div
+              initial='hidden'
+              whileInView='animate'
+              variants={fadeInUpVariants5}
+              viewport={{ once: true }}
+              className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 mt-6 md:mt-0 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'
+            >
               <h3
                 className={` md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
               >
@@ -445,8 +455,14 @@ export default function Home() {
                   alt='modern house in nature'
                 />
               </div>
-            </div>
-            <div className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
+            </motion.div>
+            <motion.div
+              initial='hidden'
+              whileInView='animate'
+              variants={fadeInUpVariants5}
+              viewport={{ once: true }}
+              className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 mt-6 md:mt-0 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'
+            >
               <h3
                 className={` md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
               >
@@ -466,8 +482,14 @@ export default function Home() {
                   alt='modern house in nature'
                 />
               </div>
-            </div>
-            <div className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
+            </motion.div>
+            <motion.div
+              initial='hidden'
+              whileInView='animate'
+              variants={fadeInUpVariants5}
+              viewport={{ once: true }}
+              className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 mt-6 md:mt-0 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'
+            >
               <h3
                 className={` md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
               >
@@ -488,7 +510,7 @@ export default function Home() {
                   alt='modern house in nature'
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
 
           <div className='hidden md:flex w-1/2 h-screen flex-col justify-center md:sticky top-0 '>
