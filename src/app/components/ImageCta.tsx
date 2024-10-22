@@ -43,7 +43,7 @@ export default function ImageCta() {
           </h3>
           <Button
             variant='outline'
-            className='z-20 bg-col_white py-5 px-2 pl-4 rounded-full border-gray-200 hover:bg-gray-100'
+            className='z-20 bg-col_white_3 py-5 px-2 pl-4 rounded-full border-gray-200 hover:bg-gray-100'
           >
             <span className={`mr-2 text-col_gray_dark `}>Get Started Now!</span>
             <span className='relative flex h-8 w-8 items-center justify-center'>

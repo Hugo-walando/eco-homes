@@ -14,6 +14,7 @@ const config: Config = {
         col_gray_light: '#909090',
         col_white_background: '#F3EEEB',
         col_white: '#ECE7E1',
+        col_white_3: '#FAF6F2',
         col_primary_1: '#FF5912',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

@@ -16,6 +16,8 @@ export default function NavBar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
+  const isHomePage = pathname === '/home';
+
   // Framer Motion animation fade in up
   const fadeInUpVariants = {
     hidden: { opacity: 0, y: 50 }, // Commence en bas avec une opacité de 0
@@ -39,7 +41,9 @@ export default function NavBar() {
         <div>
           <Link
             href='/home'
-            className={` text-nowrap font-bold text-4xl  text-col_white `}
+            className={` text-nowrap font-bold text-4xl   ${
+              isHomePage ? 'text-col_white_3' : 'text-col_gray_dark'
+            }`}
           >
             Eco Homes
           </Link>
@@ -49,7 +53,11 @@ export default function NavBar() {
         <div className='md:hidden z-20'>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className=' text-gray-500 bg-col_white rounded-full p-2 hover:text-gray-700 focus:outline-none'
+            className={` ${
+              isHomePage
+                ? 'text-col_gray_dark bg-col_white_3'
+                : 'text-col_white_3 bg-col_gray_dark'
+            } rounded-full p-2 focus:outline-none`}
           >
             <svg
               className='w-6 h-6'
@@ -71,7 +79,11 @@ export default function NavBar() {
         <ul
           className={`${
             isOpen ? 'translate-y-0' : 'translate-y-[-600px]'
-          } z-10 flex flex-col absolute left-0 md:translate-y-0 top-0 items-center transition-transform duration-500 ease-in-out bg-opacity-10 backdrop-blur-md border-b-2 border-col_white_background  md:bg-opacity-100 rounded-lg w-full md:w-auto md:static md:flex-row py-16 px-12 bg-col_white md:rounded-full md:py-3 md:px-6 gap-8`}
+          } z-10 flex flex-col absolute left-0 md:translate-y-0 top-0 items-center transition-transform duration-500 ease-in-out bg-opacity-10 backdrop-blur-md border-b-2 ${
+            isHomePage
+              ? 'bg-col_white_3 border-col_white_background'
+              : 'bg-col_gray_dark md:bg-col_white_3 border-col_gray_dark md:border-col_white_background'
+          }   md:bg-opacity-100 rounded-lg w-full md:w-auto md:static md:flex-row py-16 px-12 md:rounded-full md:py-3 md:px-6 gap-8`}
         >
           {navLinks.map((link) => {
             const isActive = pathname.startsWith(link.href);
@@ -80,7 +92,9 @@ export default function NavBar() {
                 <Link
                   className={` ${
                     isActive ? 'md:text-green-500' : 'md:text-col_gray_dark'
-                  } text-lg md:text-xs text-col_white hover:text-col_gray_light`}
+                  } text-lg md:text-xs ${
+                    isHomePage ? 'text-col_white_3' : 'text-col_gray_dark'
+                  } hover:text-col_gray_light`}
                   href={link.href}
                 >
                   {link.name}
@@ -91,7 +105,11 @@ export default function NavBar() {
         </ul>
 
         <Link
-          className={` hidden md:block text-xs text-nowrap hover:bg-transparent  text-col_white_background py-3 px-6 bg-col_white_background border backdrop-blur-sm border-col_white_background bg-opacity-50 rounded-full`}
+          className={` hidden md:block text-xs text-nowrap hover:bg-transparent ${
+            isHomePage
+              ? 'text-col_white_3 border-col_white_background '
+              : 'text-col_gray_dark border-col_gray_dark'
+          } py-3 px-6 bg-col_white_background border backdrop-blur-sm  bg-opacity-50 rounded-full`}
           href='/contact'
         >
           Free Consultation!

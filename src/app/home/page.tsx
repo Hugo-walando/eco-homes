@@ -134,7 +134,7 @@ export default function Home() {
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       };
     }
-  }, []);
+  });
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -186,7 +186,7 @@ export default function Home() {
             >
               <Button
                 variant='outline'
-                className=' bg-col_white py-5 px-2 pl-4 rounded-full border-gray-200 hover:bg-gray-100'
+                className=' bg-col_white_3 py-5 px-2 pl-4 rounded-full border-gray-200 hover:bg-gray-100'
               >
                 <span className={`mr-2 text-col_gray_dark `}>Get Started!</span>
                 <span className='relative flex h-8 w-8 items-center justify-center'>
@@ -198,7 +198,7 @@ export default function Home() {
               </Button>
               <Button
                 variant='outline'
-                className=' bg-col_white bg-opacity-50 backdrop-blur-sm hover:bg-transparent py-5 px-2 pl-4 rounded-full border-col_white'
+                className=' bg-col_white_3 bg-opacity-50 backdrop-blur-sm hover:bg-transparent py-5 px-2 pl-4 rounded-full border-col_white'
               >
                 <span className={`mr-2 text-col_white `}>Contact Us!</span>
                 <span className='relative flex h-8 w-8 items-center justify-center'>
@@ -264,7 +264,7 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-      <section className='md:h-screen sm:h-auto w-full flex bg-col_white flex-col items-center z-0 px-4 md:px-12 pb-6 lg:px-20'>
+      <section className='md:h-screen sm:h-auto w-full flex bg-col_white_3 flex-col items-center z-0 px-4 md:px-12 pb-6 lg:px-20'>
         <div className='w-full py-6  flex flex-col md:flex-row justify-between md:pt-12 md:pb-12 lg:pt-20 lg:pb-16'>
           <div className=''>
             <motion.span
@@ -406,7 +406,7 @@ export default function Home() {
             ref={fadeInTextContainerRef}
             className='md:w-1/2 flex flex-col md:items-end px-3 md:px-0'
           >
-            <div className='h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'>
+            <div className='h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white_3 md:bg-transparent rounded-xl'>
               <h3
                 className={` md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
               >
@@ -433,7 +433,7 @@ export default function Home() {
               whileInView='animate'
               variants={fadeInUpVariants}
               viewport={{ once: true }}
-              className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 mt-6 md:mt-0 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'
+              className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 mt-6 md:mt-0 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white_3 md:bg-transparent rounded-xl'
             >
               <h3
                 className={` md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
@@ -462,7 +462,7 @@ export default function Home() {
               whileInView='animate'
               variants={fadeInUpVariants}
               viewport={{ once: true }}
-              className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 mt-6 md:mt-0 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'
+              className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 mt-6 md:mt-0 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white_3 md:bg-transparent rounded-xl'
             >
               <h3
                 className={` md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
@@ -489,7 +489,7 @@ export default function Home() {
               whileInView='animate'
               variants={fadeInUpVariants}
               viewport={{ once: true }}
-              className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 mt-6 md:mt-0 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white md:bg-transparent rounded-xl'
+              className='animated-text h-auto md:h-screen flex flex-col md:items-center justify-center w-full  xl:max-w-[80%] text-left px-4 mt-6 md:mt-0 md:px-12 pb-6 lg:px-20 pt-6 bg-col_white_3 md:bg-transparent rounded-xl'
             >
               <h3
                 className={` md:max-w-full text-left text-col_gray_dark font-medium text-3xl md:text-4xl xl:text-5xl `}
