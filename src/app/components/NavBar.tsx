@@ -90,10 +90,10 @@ export default function NavBar() {
             return (
               <li key={link.href} className='flex items-center'>
                 <Link
-                  className={` ${
-                    isActive ? 'md:text-green-500' : 'md:text-col_gray_dark'
-                  } text-lg md:text-xs ${
+                  className={`  text-lg md:text-xs ${
                     isHomePage ? 'text-col_white_3' : 'text-col_gray_dark'
+                  } ${
+                    isActive ? 'md:text-green-500' : 'md:text-col_gray_dark'
                   } hover:text-col_gray_light`}
                   href={link.href}
                 >

@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import boxForestCabin from '../public/images/3d-rendering-wooden-house2.jpg';
 
 const fadeInUpVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -15,7 +17,7 @@ export default function Projects() {
   return (
     <>
       <div className='h-[25dvh] w-full bg-col_white border-b-2 border-gray-300'></div>
-      <section className='md:h-screen sm:h-auto w-full flex bg-col_white flex-col items-center z-0 px-4 md:px-12 pb-6 lg:px-20'>
+      <section className='h-auto w-full flex bg-col_white flex-col items-center z-0 px-4 md:px-12 lg:px-20 pb-12'>
         <div className='w-full py-6  flex flex-col md:flex-row justify-between md:pt-12 md:pb-12 lg:pt-20 lg:pb-16'>
           <motion.h2
             initial='hidden'
@@ -38,6 +40,38 @@ export default function Projects() {
               Our well-engineered houses are designed with precision, offerring
               a perfect blend of durabilty, efficiency, and comfort.
             </motion.span>
+          </div>
+        </div>
+        <div className='flex w-full flex-col sm:flex-row sm:items-end justify-between'>
+          <div className=' pb-6 sm:pb-0 w-full'>
+            <div className='w-full pb-6 sm:pb-0 sm:w-[90%]'>
+              <div className='h-[300px] sm:h-[300px] lg:h-[350px] xl:h-[500px] w-full pb-2'>
+                <Image
+                  className='w-full h-full object-cover rounded-xl'
+                  src={boxForestCabin}
+                  alt='modern house in nature'
+                />
+              </div>
+              <div className='w-full h-4 flex flex-row sm:flex-col md:flex-row justify-between'>
+                <span className='text-col_gray_dark'>France</span>
+                <span className='text-col_gray_dark'>19 rjkrf fpze </span>
+              </div>
+            </div>
+          </div>
+          <div className='w-full flex justify-end'>
+            <div className='w-full  sm:w-[70%]'>
+              <div className='h-[200px] sm:h-[200px] lg:h-[250px] xl:h-[400px] pb-2'>
+                <Image
+                  className='w-full h-full object-cover rounded-xl'
+                  src={boxForestCabin}
+                  alt='modern house in nature'
+                />
+              </div>
+              <div className='w-full h-4 flex  flex-row sm:flex-col md:flex-row justify-between'>
+                <span className='text-col_gray_dark'>France</span>
+                <span className='text-col_gray_dark'>19 rjkrf fpze </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
