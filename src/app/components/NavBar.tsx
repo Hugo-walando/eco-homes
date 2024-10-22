@@ -73,7 +73,7 @@ export default function NavBar() {
         <ul
           className={`${
             isOpen ? 'translate-y-0' : 'translate-y-[-600px]'
-          } z-10 flex flex-col absolute left-0 md:translate-y-0 top-0 items-center transition-transform duration-500 ease-in-out bg-opacity-40 backdrop-blur-sm border-b-2 border-col_white_background  md:bg-opacity-100 rounded-lg w-full md:w-auto md:static md:flex-row py-16 px-12 bg-col_white md:rounded-full md:py-3 md:px-6 gap-8`}
+          } z-10 flex flex-col absolute left-0 md:translate-y-0 top-0 items-center transition-transform duration-500 ease-in-out bg-opacity-10 backdrop-blur-md border-b-2 border-col_white_background  md:bg-opacity-100 rounded-lg w-full md:w-auto md:static md:flex-row py-16 px-12 bg-col_white md:rounded-full md:py-3 md:px-6 gap-8`}
         >
           {navLinks.map((link) => {
             const isActive = pathname.startsWith(link.href);
