@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from '@/lib/gsap';
 import { motion } from 'framer-motion';
@@ -9,29 +9,33 @@ import boxForestCabin from '../public/images/3d-rendering-wooden-house2.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const fadeInUpVariants = {
-  hidden: { opacity: 0, y: 50 },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: 'easeOut' },
-  },
-};
-
 export default function Projects() {
   const projectNumbers = useRef<HTMLDivElement>(null);
 
-  gsap.from(projectNumbers.current, {
-    innerText: 0,
-    duration: 3,
-    scrollTrigger: {
-      trigger: projectNumbers.current,
-      markers: true,
-    },
-    snap: {
-      innerText: 1,
-    },
+  useEffect(() => {
+    if (projectNumbers.current) {
+      console.log(projectNumbers.current?.innerText);
+      gsap.to(projectNumbers.current, {
+        innerText: '54',
+        duration: 2,
+        ease: 'power2.out',
+        snap: { innerText: 1 },
+        scrollTrigger: {
+          trigger: projectNumbers.current,
+          start: 'top 70%',
+          markers: true,
+        },
+      });
+    }
   });
+  const fadeInUpVariants = {
+    hidden: { opacity: 0, y: 50 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: 'easeOut' },
+    },
+  };
   return (
     <>
       <div className='h-[25dvh] w-full bg-col_white border-b-2 border-col_gray_dark'></div>
@@ -121,7 +125,7 @@ export default function Projects() {
             ref={projectNumbers}
             className='text-8xl md:text-9xl text-green-500'
           >
-            54
+            0
           </h2>
           <div className='h-full rounded-full w-[3px] bg-col_gray_dark'></div>
           <h2 className='text-3xl text-col_gray_dark md:text-4xl xl:text-5xl '>
