@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { useLenisScroll } from '../lenis/page';
+import { useLenisScroll } from '../../lib/lenis';
 
 const navLinks = [
   { name: 'Home', href: '/home' },
