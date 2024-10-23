@@ -23,7 +23,6 @@ export default function Projects() {
         scrollTrigger: {
           trigger: projectNumbers.current,
           start: 'top 70%',
-          markers: true,
         },
       });
     }
