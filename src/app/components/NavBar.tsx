@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
+import { useLenisScroll } from '../lenis/page';
 
 const navLinks = [
   { name: 'Home', href: '/home' },
@@ -28,6 +29,7 @@ export default function NavBar() {
     },
   };
 
+  useLenisScroll();
   return (
     <>
       <div className='absolute top-0 w-full h-1 bg-black bg-opacity-0'></div>

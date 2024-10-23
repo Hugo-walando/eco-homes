@@ -13,7 +13,6 @@ import cabin2 from '../public/images/unique-simple-small-wooden-house-design-7.j
 
 import React, { useRef, useEffect } from 'react';
 import Image from 'next/image';
-import Lenis from 'lenis';
 import { ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import gsap from 'gsap';
@@ -135,15 +134,6 @@ export default function Home() {
       };
     }
   });
-
-  useEffect(() => {
-    const lenis = new Lenis();
-    const raf = (time: number) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
-  }, []);
 
   // Framer Motion animation fade in up
   const fadeInUpVariants = {
