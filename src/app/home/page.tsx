@@ -153,7 +153,7 @@ export default function Home() {
         <Image
           src={Cabin}
           alt='Cabin'
-          className='w-full h-dvh object-cover absolute'
+          className='w-full h-full object-cover absolute'
           priority
         />
         <div className='z-0 absolute inset-0 bg-black bg-opacity-20'></div>
@@ -211,8 +211,8 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-        <div className='absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-col_white_background via-transparent to-transparent'></div>
         <ScrollToTopButton />
+        <div className='absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-col_white_background via-transparent to-transparent z-20'></div>
       </section>
       <section className='h-auto sm:h-screen w-full flex bg-col_white_background flex-col items-center '>
         <motion.h2
