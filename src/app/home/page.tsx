@@ -210,6 +210,7 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
+        <div className='absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-col_white_background via-transparent to-transparent'></div>
       </section>
       <section className='h-auto sm:h-screen w-full flex bg-col_white_background flex-col items-center '>
         <motion.h2
