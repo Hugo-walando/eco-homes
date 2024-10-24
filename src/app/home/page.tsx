@@ -18,6 +18,7 @@ import { Button } from '@/components/ui/button';
 import gsap from 'gsap';
 import { ScrollTrigger } from '@/lib/gsap';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -175,28 +176,37 @@ export default function Home() {
               className='flex  gap-4'
             >
               <Button
+                asChild
                 variant='outline'
                 className=' bg-col_white_3 py-5 px-2 pl-4 rounded-full border-gray-200 hover:bg-gray-100'
               >
-                <span className={`mr-2 text-col_gray_dark `}>Get Started!</span>
-                <span className='relative flex h-8 w-8 items-center justify-center'>
-                  <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75'></span>
-                  <span className='relative inline-flex h-full w-full items-center justify-center rounded-full bg-green-500'>
-                    <ChevronRight className='h-4 w-4 text-white' />
+                <a
+                  href='https://www.linkedin.com/in/hugo-walandowitsch/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <span className='mr-2 text-col_gray_dark'>Get Started!</span>
+                  <span className='relative flex h-8 w-8 items-center justify-center'>
+                    <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75'></span>
+                    <span className='relative inline-flex h-full w-full items-center justify-center rounded-full bg-green-500'>
+                      <ChevronRight className='h-4 w-4 text-white' />
+                    </span>
                   </span>
-                </span>
+                </a>
               </Button>
-              <Button
-                variant='outline'
-                className=' bg-col_white_3 bg-opacity-50 backdrop-blur-sm hover:bg-transparent py-5 px-2 pl-4 rounded-full border-col_white'
-              >
-                <span className={`mr-2 text-col_white `}>Contact Us!</span>
-                <span className='relative flex h-8 w-8 items-center justify-center'>
-                  <span className='relative inline-flex h-full w-full items-center justify-center rounded-full'>
-                    <ChevronRight className='h-4 w-4 text-white' />
+              <Link href='/contact' passHref>
+                <Button
+                  variant='outline'
+                  className=' bg-col_white_3 bg-opacity-50 backdrop-blur-sm hover:bg-transparent py-5 px-2 pl-4 rounded-full border-col_white'
+                >
+                  <span className={`mr-2 text-col_white `}>Contact Us!</span>
+                  <span className='relative flex h-8 w-8 items-center justify-center'>
+                    <span className='relative inline-flex h-full w-full items-center justify-center rounded-full'>
+                      <ChevronRight className='h-4 w-4 text-white' />
+                    </span>
                   </span>
-                </span>
-              </Button>
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </div>

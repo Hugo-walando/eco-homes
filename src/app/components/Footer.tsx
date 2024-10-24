@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export default function Footer() {
@@ -84,7 +85,7 @@ export default function Footer() {
 
               <li>
                 <a
-                  href='#'
+                  href='https://github.com/Hugo-walando'
                   rel='noreferrer'
                   target='_blank'
                   className='text-gray-700 transition hover:opacity-75'
@@ -138,13 +139,13 @@ export default function Footer() {
 
               <ul className='mt-6 space-y-4 text-sm'>
                 <li>
-                  <a
-                    href='#'
+                  <Link
+                    href='/home'
                     className='text-gray-700 transition hover:opacity-75'
                   >
                     {' '}
                     Introduction{' '}
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
@@ -256,13 +257,13 @@ export default function Footer() {
 
               <ul className='mt-6 space-y-4 text-sm'>
                 <li>
-                  <a
-                    href='#'
+                  <Link
+                    href='/projects'
                     className='text-gray-700 transition hover:opacity-75'
                   >
                     {' '}
                     Completed Projects{' '}
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
