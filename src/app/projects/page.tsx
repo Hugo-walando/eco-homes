@@ -5,6 +5,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from '@/lib/gsap';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { EmblaCarousel } from '../components/Carousel';
+
 import boxForestCabin from '../public/images/3d-rendering-wooden-house2.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -130,6 +132,10 @@ export default function Projects() {
           <h2 className='text-3xl text-col_gray_dark md:text-4xl xl:text-5xl '>
             Projects we have done in 2024
           </h2>
+        </div>
+
+        <div className='h-56 sm:h-64 xl:h-80 2xl:h-96 w-1/2'>
+          <EmblaCarousel />
         </div>
       </section>
     </>
