@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { EmblaCarousel } from '../components/Carousel';
 
 import cabin4 from '../public/images/cabin_project4.jpeg';
-import cabin5 from '../public/images/cabin_project5.jpeg';
+import cabin5 from '../public/images/cabin_project6.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,8 +61,8 @@ export default function Projects() {
               viewport={{ once: true }}
               className={` text-col_gray_light font-extralight pt-6 md:pt-0 md:max-w-[60%] md:text-right`}
             >
-              Our well-engineered houses are designed with precision, offerring
-              a perfect blend of durabilty, efficiency, and comfort.
+              Our game-changing innovation is the perfect blend of design,
+              technology, and sustainability.
             </motion.span>
           </div>
         </div>
@@ -83,8 +83,8 @@ export default function Projects() {
                 />
               </motion.div>
               <div className='w-full h-4 flex flex-row sm:flex-col md:flex-row justify-between'>
-                <span className='text-col_gray_dark'>France</span>
-                <span className='text-col_gray_dark'>19 rjkrf fpze </span>
+                <span className='text-col_gray_dark'>Tiny Heaven</span>
+                <span className='text-col_gray_dark'>Toronto</span>
               </div>
             </div>
           </div>
@@ -104,8 +104,8 @@ export default function Projects() {
                 />
               </motion.div>
               <div className='w-full h-4 flex  flex-row sm:flex-col md:flex-row justify-between'>
-                <span className='text-col_gray_dark'>France</span>
-                <span className='text-col_gray_dark'>19 rjkrf fpze </span>
+                <span className='text-col_gray_dark'>Eco Nest</span>
+                <span className='text-col_gray_dark'>New Zealand</span>
               </div>
             </div>
           </div>
@@ -122,7 +122,13 @@ export default function Projects() {
             Explore our completed success stories
           </motion.h2>
         </div>
-        <div className='h-[100px] sm:h-[150px] md:h-[200px] lg:h-[300px]  w-full sm:w-[350px] lg:w-[500px]  flex justify-center gap-4 items-center md:pt-12 md:pb-16 lg:pt-20 lg:pb-20 xl:pb-28'>
+        <motion.div
+          initial='hidden'
+          whileInView='animate'
+          variants={fadeInUpVariants}
+          viewport={{ once: true }}
+          className='h-[100px] sm:h-[150px] md:h-[200px] lg:h-[300px]  w-full sm:w-[350px] lg:w-[500px]  flex justify-center gap-4 items-center mb-10 md:mb-0 md:pt-12 md:pb-16 lg:pt-20 lg:pb-20 xl:pb-28'
+        >
           <h2
             ref={projectNumbers}
             className='text-8xl md:text-9xl text-green-500'
@@ -133,11 +139,17 @@ export default function Projects() {
           <h2 className='text-3xl text-col_gray_dark md:text-4xl xl:text-5xl '>
             Projects we have done in 2024
           </h2>
-        </div>
+        </motion.div>
 
-        <div className='md:pt-12 md:pb-16 lg:pt-20 lg:pb-20 xl:pb-28 h-auto w-full md:w-[60%]'>
+        <motion.div
+          initial='hidden'
+          whileInView='animate'
+          variants={fadeInUpVariants}
+          viewport={{ once: true }}
+          className='md:pt-12 md:pb-16 lg:pt-20 lg:pb-20 xl:pb-28 h-auto w-full md:w-[60%]'
+        >
           <EmblaCarousel />
-        </div>
+        </motion.div>
       </section>
     </>
   );
