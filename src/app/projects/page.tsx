@@ -121,7 +121,7 @@ export default function Projects() {
             Explore our completed success stories
           </motion.h2>
         </div>
-        <div className='h-[100px] sm:h-[150px] md:h-[200px] lg:h-[300px]  w-full sm:w-[350px] lg:w-[500px]  flex justify-center gap-4 items-center md:pt-12 md:pb-12 lg:pt-20 lg:pb-16'>
+        <div className='h-[100px] sm:h-[150px] md:h-[200px] lg:h-[300px]  w-full sm:w-[350px] lg:w-[500px]  flex justify-center gap-4 items-center md:pt-12 md:pb-16 lg:pt-20 lg:pb-20 xl:pb-28'>
           <h2
             ref={projectNumbers}
             className='text-8xl md:text-9xl text-green-500'
@@ -134,7 +134,7 @@ export default function Projects() {
           </h2>
         </div>
 
-        <div className='h-56 sm:h-64 xl:h-80 2xl:h-96 w-1/2'>
+        <div className='md:pt-12 md:pb-16 lg:pt-20 lg:pb-20 xl:pb-28 h-auto w-full md:w-[70%]'>
           <EmblaCarousel />
         </div>
       </section>
