@@ -16,7 +16,7 @@ export function EmblaCarousel() {
         <div className='embla__slide h-[300px] relative md:h-[400px]'>
           <div className='w-full h-full absolute hover:bg-black hover:bg-opacity-20 opacity-0 hover:opacity-100 transition-all rounded-xl z-0'>
             <h2 className='text-4xl absolute bottom-6 left-6 text-col_white_3  transition-all z-10'>
-              Project 1
+              Coastal Retreat - Australia
             </h2>
           </div>
           <Image
@@ -28,7 +28,7 @@ export function EmblaCarousel() {
         <div className='embla__slide h-[300px] md:h-[400px]'>
           <div className='w-full h-full absolute hover:bg-black hover:bg-opacity-20 opacity-0 hover:opacity-100 transition-all rounded-xl z-0'>
             <h2 className='text-4xl absolute bottom-6 left-6 text-col_white_3  transition-all z-10'>
-              Project 2
+              Wood Comfort - Sweden
             </h2>
           </div>
           <Image
@@ -40,7 +40,7 @@ export function EmblaCarousel() {
         <div className='embla__slide h-[300px] md:h-[400px]'>
           <div className='w-full h-full absolute hover:bg-black hover:bg-opacity-20 opacity-0 hover:opacity-100 transition-all rounded-xl z-0'>
             <h2 className='text-4xl absolute bottom-6 left-6 text-col_white_3  transition-all z-10'>
-              Project 3
+              Tiny Heaven Coastal - South Africa
             </h2>
           </div>
           <Image
