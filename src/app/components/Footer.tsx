@@ -299,8 +299,15 @@ export default function Footer() {
             Privacy Policy | Terms and Conditions
           </p>
           <p className='mt-4 md:mt-0 text-sm text-gray-500'>
-            Made by <span className='text-green-500'>Hugo Walandowitsch</span> |
-            Design inspired by Zeyox Studio
+            Made by{' '}
+            <a
+              href='https://www.linkedin.com/in/hugo-walandowitsch/'
+              target='_blank'
+              className='text-green-500'
+            >
+              Hugo Walandowitsch
+            </a>{' '}
+            | Design inspired by Zeyox Studio
           </p>
         </div>
       </div>
