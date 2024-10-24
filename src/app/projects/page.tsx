@@ -7,7 +7,8 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { EmblaCarousel } from '../components/Carousel';
 
-import boxForestCabin from '../public/images/3d-rendering-wooden-house2.jpg';
+import cabin4 from '../public/images/cabin_project4.jpeg';
+import cabin5 from '../public/images/cabin_project5.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,7 +78,7 @@ export default function Projects() {
               >
                 <Image
                   className='w-full h-full object-cover rounded-xl'
-                  src={boxForestCabin}
+                  src={cabin4}
                   alt='modern house in nature'
                 />
               </motion.div>
@@ -98,7 +99,7 @@ export default function Projects() {
               >
                 <Image
                   className='w-full h-full object-cover rounded-xl'
-                  src={boxForestCabin}
+                  src={cabin5}
                   alt='modern house in nature'
                 />
               </motion.div>
@@ -134,7 +135,7 @@ export default function Projects() {
           </h2>
         </div>
 
-        <div className='md:pt-12 md:pb-16 lg:pt-20 lg:pb-20 xl:pb-28 h-auto w-full md:w-[70%]'>
+        <div className='md:pt-12 md:pb-16 lg:pt-20 lg:pb-20 xl:pb-28 h-auto w-full md:w-[60%]'>
           <EmblaCarousel />
         </div>
       </section>

@@ -13,40 +13,41 @@ export function EmblaCarousel() {
   return (
     <div className='embla' ref={emblaRef}>
       <div className='embla__container'>
-        <div className='embla__slide h-[200px] md:h-[400px]'>
+        <div className='embla__slide h-[200px] relative md:h-[400px]'>
+          <div className='w-full h-full absolute hover:bg-black hover:bg-opacity-20 opacity-0 hover:opacity-100 transition-all rounded-xl z-0'>
+            <h2 className='text-4xl absolute bottom-6 left-6 text-col_white_3  transition-all z-10'>
+              Project 1
+            </h2>
+          </div>
           <Image
             src={cabin1}
             alt='Modern house'
             className=' w-full h-full object-cover rounded-xl'
           />
-          <div className='w-full h-4 flex  flex-row sm:flex-col md:flex-row justify-between'>
-            <span className='text-col_gray_dark'>France</span>
-            <span className='text-col_gray_dark'>19 rjkrf fpze </span>
-          </div>
         </div>
-        <div className='embla__slide'>
-          <div>
-            <Image
-              src={cabin2}
-              alt='Modern house'
-              className=' w-full h-full object-cover rounded-xl'
-            />
-            <div className='w-full h-4 flex  flex-row sm:flex-col md:flex-row justify-between'>
-              <span className='text-col_gray_dark'>France</span>
-              <span className='text-col_gray_dark'>19 rjkrf fpze </span>
-            </div>
+        <div className='embla__slide h-[200px] md:h-[400px]'>
+          <div className='w-full h-full absolute hover:bg-black hover:bg-opacity-20 opacity-0 hover:opacity-100 transition-all rounded-xl z-0'>
+            <h2 className='text-4xl absolute bottom-6 left-6 text-col_white_3  transition-all z-10'>
+              Project 2
+            </h2>
           </div>
+          <Image
+            src={cabin2}
+            alt='Modern house'
+            className=' w-full h-full object-cover rounded-xl'
+          />
         </div>
-        <div className='embla__slide '>
+        <div className='embla__slide h-[200px] md:h-[400px]'>
+          <div className='w-full h-full absolute hover:bg-black hover:bg-opacity-20 opacity-0 hover:opacity-100 transition-all rounded-xl z-0'>
+            <h2 className='text-4xl absolute bottom-6 left-6 text-col_white_3  transition-all z-10'>
+              Project 3
+            </h2>
+          </div>
           <Image
             src={cabin3}
             alt='Modern house'
             className=' w-full h-full object-cover rounded-xl'
           />
-          <div className='w-full h-4 flex  flex-row sm:flex-col md:flex-row justify-between'>
-            <span className='text-col_gray_dark'>France</span>
-            <span className='text-col_gray_dark'>19 rjkrf fpze </span>
-          </div>
         </div>
       </div>
     </div>
