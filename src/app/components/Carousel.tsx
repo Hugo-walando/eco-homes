@@ -12,25 +12,13 @@ export function EmblaCarousel() {
     <div className='embla' ref={emblaRef}>
       <div className='embla__container'>
         <div className='embla__slide'>
-          <Image
-            src={boxForestCabin}
-            alt='Modern house'
-            className='object-cover'
-          />
+          <Image src={boxForestCabin} alt='Modern house' />
         </div>
         <div className='embla__slide'>
-          <Image
-            src={boxForestCabin}
-            alt='Modern house'
-            className='object-cover'
-          />
+          <Image src={boxForestCabin} alt='Modern house' />
         </div>
         <div className='embla__slide'>
-          <Image
-            src={boxForestCabin}
-            alt='Modern house'
-            className='object-cover'
-          />
+          <Image src={boxForestCabin} alt='Modern house' />
         </div>
       </div>
     </div>
