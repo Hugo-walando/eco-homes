@@ -210,17 +210,17 @@ export default function Home() {
               </Link>
             </motion.div>
           </div>
+          <div className='absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-col_white_background via-transparent to-transparent z-20'></div>
         </div>
         <ScrollToTopButton />
-        <div className='absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-col_white_background via-transparent to-transparent z-20'></div>
       </section>
       <section className='h-auto sm:h-screen w-full flex bg-col_white_background flex-col items-center '>
         <motion.h2
           initial='hidden'
           whileInView='animate'
           variants={fadeInUpVariants}
-          viewport={{ once: true }}
           className={` px-4 text-center text-col_gray_dark text-2xl md:text-4xl  pt-20 max-w-screen-sm  `}
+          viewport={{ once: true }}
         >
           These eco-friendly homes are designed to meet modern needs, combining
           sustainability, efficiency, and contemporary living for a
