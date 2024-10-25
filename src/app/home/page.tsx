@@ -149,7 +149,7 @@ export default function Home() {
 
   return (
     <>
-      <section className='w-full h-screen overflow-hidden'>
+      <section className='w-full h-dvh overflow-hidden'>
         <Image
           src={Cabin}
           alt='Cabin'
