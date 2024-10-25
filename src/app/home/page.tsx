@@ -157,59 +157,57 @@ export default function Home() {
           priority
         />
         <div className='z-0 absolute inset-0 bg-black bg-opacity-20'></div>
-        <div className='w-full h-full relative px-2 pb-8 md:px-16 md:pb-20'>
-          <div className='z-10 bottom-6 left-4 absolute max-w-screen-md md:left-16 md:bottom-16'>
-            <motion.h1
-              initial='hidden'
-              whileInView='animate'
-              variants={fadeInUpVariants}
-              viewport={{ once: true }}
-              className={` text-4xl md:text-5xl font-semi-bold text-col_white mb-4 md:mb-12`}
+        <div className='z-10 bottom-6 left-4 absolute max-w-screen-md md:left-16 md:bottom-16'>
+          <motion.h1
+            initial='hidden'
+            whileInView='animate'
+            variants={fadeInUpVariants}
+            viewport={{ once: true }}
+            className={` text-4xl md:text-5xl font-semi-bold text-col_white mb-4 md:mb-12`}
+          >
+            Eco-friendly tiny homes <br />
+            designed for sustainable living
+          </motion.h1>
+          <motion.div
+            initial='hidden'
+            whileInView='animate'
+            variants={fadeInUpVariants}
+            viewport={{ once: true }}
+            className='flex  gap-4'
+          >
+            <Button
+              asChild
+              variant='outline'
+              className=' bg-col_white_3 py-5 px-2 pl-4 rounded-full border-gray-200 hover:bg-gray-100'
             >
-              Eco-friendly tiny homes <br />
-              designed for sustainable living
-            </motion.h1>
-            <motion.div
-              initial='hidden'
-              whileInView='animate'
-              variants={fadeInUpVariants}
-              viewport={{ once: true }}
-              className='flex  gap-4'
-            >
-              <Button
-                asChild
-                variant='outline'
-                className=' bg-col_white_3 py-5 px-2 pl-4 rounded-full border-gray-200 hover:bg-gray-100'
+              <a
+                href='https://www.linkedin.com/in/hugo-walandowitsch/'
+                target='_blank'
+                rel='noopener noreferrer'
               >
-                <a
-                  href='https://www.linkedin.com/in/hugo-walandowitsch/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  <span className='mr-2 text-col_gray_dark'>Get Started!</span>
-                  <span className='relative flex h-8 w-8 items-center justify-center'>
-                    <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75'></span>
-                    <span className='relative inline-flex h-full w-full items-center justify-center rounded-full bg-green-500'>
-                      <ChevronRight className='h-4 w-4 text-white' />
-                    </span>
+                <span className='mr-2 text-col_gray_dark'>Get Started!</span>
+                <span className='relative flex h-8 w-8 items-center justify-center'>
+                  <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75'></span>
+                  <span className='relative inline-flex h-full w-full items-center justify-center rounded-full bg-green-500'>
+                    <ChevronRight className='h-4 w-4 text-white' />
                   </span>
-                </a>
+                </span>
+              </a>
+            </Button>
+            <Link href='/contact' passHref>
+              <Button
+                variant='outline'
+                className=' bg-col_white_3 bg-opacity-50 backdrop-blur-sm hover:bg-transparent py-5 px-2 pl-4 rounded-full border-col_white'
+              >
+                <span className={`mr-2 text-col_white `}>Contact Us!</span>
+                <span className='relative flex h-8 w-8 items-center justify-center'>
+                  <span className='relative inline-flex h-full w-full items-center justify-center rounded-full'>
+                    <ChevronRight className='h-4 w-4 text-white' />
+                  </span>
+                </span>
               </Button>
-              <Link href='/contact' passHref>
-                <Button
-                  variant='outline'
-                  className=' bg-col_white_3 bg-opacity-50 backdrop-blur-sm hover:bg-transparent py-5 px-2 pl-4 rounded-full border-col_white'
-                >
-                  <span className={`mr-2 text-col_white `}>Contact Us!</span>
-                  <span className='relative flex h-8 w-8 items-center justify-center'>
-                    <span className='relative inline-flex h-full w-full items-center justify-center rounded-full'>
-                      <ChevronRight className='h-4 w-4 text-white' />
-                    </span>
-                  </span>
-                </Button>
-              </Link>
-            </motion.div>
-          </div>
+            </Link>
+          </motion.div>
         </div>
         <ScrollToTopButton />
         <div className='absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-col_white_background via-transparent to-transparent z-20'></div>
