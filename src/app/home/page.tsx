@@ -149,11 +149,11 @@ export default function Home() {
 
   return (
     <>
-      <section className='w-full h-screen overflow-hidden'>
+      <section className='w-full h-dvh overflow-hidden'>
         <Image
           src={Cabin}
           alt='Cabin'
-          className='w-full h-full object-cover absolute'
+          className='w-full h-dvh object-cover absolute'
           priority
         />
         <div className='z-0 absolute inset-0 bg-black bg-opacity-20'></div>
