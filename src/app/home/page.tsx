@@ -157,8 +157,8 @@ export default function Home() {
           priority
         />
         <div className='z-0 absolute inset-0 bg-black bg-opacity-20'></div>
-        <div className='w-full h-full flex items-end md:justify-start justify-center px-2 pb-8 md:px-16 md:pb-20'>
-          <div className='z-10 max-w-screen-md'>
+        <div className='w-full h-full relative px-2 pb-8 md:px-16 md:pb-20'>
+          <div className='z-10 bottom-6 left-4 absolute max-w-screen-md md:left-16 md:bottom-16'>
             <motion.h1
               initial='hidden'
               whileInView='animate'
